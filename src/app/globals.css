@@ -333,7 +333,7 @@ section {
   position: relative;
 }
 
-.testimonial:before {
+.testimonial:after {
   content: '"';
   font-size: 5rem;
   color: var(--primary);

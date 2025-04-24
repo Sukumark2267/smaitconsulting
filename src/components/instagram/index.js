@@ -43,9 +43,9 @@ const InstagramFeed = () => {
           </div>
         ))}
       </div>
-      <div class="instagram-cta">
-      <button class="cta-button">
-        <i class="fab fa-instagram"></i> Follow Us
+      <div className="instagram-cta">
+      <button className="cta-button">
+        <i className="fab fa-instagram"></i> Follow Us
       </button>
       </div>
     </section>
