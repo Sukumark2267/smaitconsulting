@@ -53,7 +53,7 @@ const MembershipSection = () => {
               {/* Front Face */}
               <div className="front">
                 <h4>{plan.name}</h4>
-                <h4>Whats Included</h4>
+                <h4>What&rsquo;s Included</h4>
                   <ul>
                     {plan.features.map((feature, i) => (
                       <li key={i}>{feature}</li>

@@ -289,16 +289,21 @@ section {
   padding: 2.5rem;
   border-radius: 12px;
   position: relative;
+  transition: transform 0.4s;
 }
 
 .testimonial:after {
   content: '"';
   font-size: 5rem;
   color: var(--primary);
-  opacity: 0.2;
+  opacity: 0.8;
   position: absolute;
   top: 10px;
-  left: 20px;
+  left: 12px;
+}
+
+.testimonial:hover {
+  transform: translateY(-10px);
 }
 
 .testimonial p {

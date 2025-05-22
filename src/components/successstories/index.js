@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 const testimonials = [
   {
-    text: "Dreamland completely changed my relationship with fitness. The coaches genuinely care about your progress and the community keeps you accountable. I&apos;ve never been stronger!",
+    text: "Dreamland completely changed my relationship with fitness. The coaches genuinely care about your progress and the community keeps you accountable. I've never been stronger!",
     author: {
       name: 'JESSICA M.',
       role: 'Member since 2019',
@@ -12,7 +12,7 @@ const testimonials = [
     },
   },
   {
-    text: "As a competitive athlete, I needed training that would push me further. Dreamland&apos;s elite program helped me shave 2 seconds off my 40yd dash in 3 months.",
+    text: "As a competitive athlete, I needed training that would push me further. Dreamland's elite program helped me shave 2 seconds off my 40yd dash in 3 months.",
     author: {
       name: 'TYLER R.',
       role: 'College Football Player',
@@ -20,7 +20,7 @@ const testimonials = [
     },
   },
   {
-    text: "The energy at Dreamland is unmatched. Every workout feels like you&apos;re part of something bigger. Follow our journey @dreamland_brampton!",
+    text: "The energy at Dreamland is unmatched. Every workout feels like you're part of something bigger. Follow our journey @dreamland_brampton!",
     author: {
       name: 'PRIYA K.',
       role: 'Instagram Community Manager',
