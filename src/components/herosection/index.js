@@ -57,21 +57,21 @@ export default function HeroSection() {
       });
       tl.from(".gym-equipment-right", {
         opacity: 0,
-        yPercent: 200,
+        xPercent: -10,
         ease: "none",
         duration: 2,
       });
   
       tl.from(".gym-equipment-middle", {
         opacity: 0,
-        yPercent: 200,
+        yPercent: 10,
         ease: "none",
         duration: 2,
       });
   
       tl.from(".gym-equipment-left", {
         opacity: 0,
-        yPercent: 200,
+        xPercent: 10,
         ease: "none",
         duration: 2,
       });
@@ -117,7 +117,7 @@ export default function HeroSection() {
 <section className="hero relative w-full h-screen overflow-hidden">
   {/* Background logo */}
   <Image
-    src="/images/logo/dl_icon_yellow_empty.png"
+    src="/images/logo/dl_color_icon.png"
     alt="Dreamland Athletics Gym"
     fill
     className="bg-logo absolute object-cover rounded-xl"
@@ -217,7 +217,7 @@ export default function HeroSection() {
 
         {/* Below layer shadow */}
         <Image
-          src="/images/logo/dl_icon_yellow_empty-shadow.png"
+          src="/images/logo/dl_icon_black_empty.png"
           alt="Dreamland Shadow Logo"
           fill
           className="bg-belowlayer object-cover rounded-lg"

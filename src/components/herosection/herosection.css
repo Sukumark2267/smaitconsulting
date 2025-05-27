@@ -79,7 +79,7 @@
   }
  
   .bg-belowlayer {
-    z-index: 2;
+    z-index: 32;
   }
 
 .hero-content .cta-button{
@@ -153,11 +153,11 @@
   text-align: start;
   width: max-content;
   pointer-events: none;
+  z-index: 1;
 }
 
 .Dreamland-heading1 {
   color: #e7b826;
-  z-index: 2;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
 }
 
