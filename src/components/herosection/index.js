@@ -79,31 +79,31 @@ export default function HeroSection() {
       tl.from(".Dreamland-heading1", {
         opacity: 0,
         ease: "none",
-        duration: 5,
+        duration: 3,
         stagger:true,
       });
 
       tl.from(".Dreamland-heading2", {
         opacity: 0,
         ease: "none",
-        duration: 5,
+        duration: 3,
         stagger:true,
       });
 
       tl.to(".bg-logo", {
         y: -230,        
         scale: 0.5, 
-        duration: 5,
+        duration: 3,
       });
 
       tl.to(".bg-belowlayer", {
         y: -230,        
         scale: 0.55, 
-        duration: 5,
+        duration: 3,
       },"<");
 
       tl.to({}, {
-        duration: 5,
+        duration: 2,
       });
       ScrollTrigger.refresh();
   
