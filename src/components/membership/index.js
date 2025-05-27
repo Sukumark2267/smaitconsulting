@@ -1,6 +1,11 @@
 // components/MembershipSection.jsx
-import React from 'react';
+"use client";
+import React, { useLayoutEffect } from 'react';
 import './membership.css';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const membershipPlans = [
   {
@@ -42,6 +47,36 @@ const membershipPlans = [
 ];
 
 const MembershipSection = () => {
+  useLayoutEffect(() => {
+    const cards = gsap.utils.toArray('.price-box');
+  
+    cards.forEach((card) => {
+      gsap.fromTo(
+        card,
+        { rotateX: 35, rotateY: 20, opacity: 0 },
+        {
+          rotateX: 0,
+          rotateY: 0,
+          opacity: 1,
+          delay:0.1,
+          duration: 1,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: card,
+            start: 'top 80%',
+            toggleActions: 'play none none none',
+            once: true,
+          },
+        }
+      );
+    });
+  
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
+  }, []);
+  
+  
   return (
     <section id="membership">
       <h2 className="section-title">MEMBERSHIP PLANS</h2>
@@ -69,7 +104,7 @@ const MembershipSection = () => {
                   <span>/month</span>
                 </div> */}
                 <button className="cta-button" style={{ marginTop: '1.5rem' }}>
-                  View Features
+                  Turn the Cards!!
                 </button>
               </div>
 

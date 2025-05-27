@@ -15,7 +15,7 @@ export default function Navbar() {
     </button>
     <nav id="mainNav">
       <Link href="/">Home</Link>
-      <Link href="/about">About</Link>
+      <Link href="/AboutUs">About</Link>
       {/* <Link href="/programs">Programs</Link> */}
       <Link href="/contact">Contact</Link>
 

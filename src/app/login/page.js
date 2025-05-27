@@ -1,16 +1,29 @@
 'use client';
 
 import Image from 'next/image';
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import './Login.css';
+import Navbar from '@/components/navbar';
+import Footer from '@/components/footer';
+import Preloader from '@/components/Preloader';
 
 const Login = () => {
   const [isSignUp, setIsSignUp] = useState(false);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1500); 
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const toggleForm = () => {
     setIsSignUp(!isSignUp);
   };
 
+  if (loading) return <Preloader />;
   return (
         <div className="auth-container">
           <div className={`cont ${isSignUp ? 's--signup' : ''}`}>

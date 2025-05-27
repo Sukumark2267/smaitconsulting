@@ -36,3 +36,7 @@
       left: -650px;
     }
   }
+
+  #about {
+    position: relative;
+  }

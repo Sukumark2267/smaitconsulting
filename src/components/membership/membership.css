@@ -45,7 +45,7 @@
   height: 100%;
   position: relative;
   transform-style: preserve-3d;
-  transition: transform 0.8s;
+  transition: transform 0.4s;
   border-radius: 10px;
 }
 
@@ -76,6 +76,11 @@
 .front {
   z-index: 2;
 }
+
+.price-box:hover .content {
+  transform: rotateY(180deg);
+}
+
 
 .back {
   transform: rotateY(180deg);

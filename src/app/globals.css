@@ -100,13 +100,13 @@ nav a:hover {
 }
 
 .hero {
-  background: url('/images/elements/BGTexture_highquality-002.jpg') no-repeat center center;
+  background: url('/images/elements/BGTexture_highquality-002.jpg') no-repeat center center fixed;
   max-width: 110vw;
   margin: 0%;
   background-size: cover;
   height: 88vh;
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   justify-content: center;
   text-align: center;
   padding: 0px;
@@ -294,10 +294,6 @@ section {
   transition: transform 0.5s;
 }
 
-.trainer-card:hover .trainer-image img {
-  transform: scale(1.05);
-}
-
 .trainer-social {
   position: absolute;
   bottom: 20px;
@@ -308,10 +304,6 @@ section {
   gap: 1rem;
   opacity: 0;
   transition: opacity 0.3s;
-}
-
-.trainer-card:hover .trainer-social {
-  opacity: 1;
 }
 
 .trainer-social a {
@@ -329,6 +321,13 @@ section {
 .trainer-social a:hover {
   background: var(--primary);
   color: var(--secondary);
+}
+
+#sucessstories {
+  background-color: var(--dark-bg);
+  max-width: 100vw;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 .testimonials-container {
@@ -390,7 +389,15 @@ section {
 
 .instagram-section {
   text-align: center;
+
 }
+
+  #instagram {
+    background: url('/images/elements/F-Bg.png') no-repeat center center fixed;
+    max-width: 100vw;
+    padding-left: 10rem;
+    padding-right: 10rem;
+  }
 
 .instagram-feed {
   display: grid;

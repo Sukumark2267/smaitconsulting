@@ -1,7 +1,10 @@
 'use client';
-import React from 'react';
-import { motion } from 'framer-motion';
+import { useLayoutEffect } from 'react';
 import './programs.css';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const programsData = [
   {
@@ -37,25 +40,61 @@ const programsData = [
 ];
 
 const ProgramsSection = () => {
+//         gsap.from(".card", {
+//             opacity: 0,
+//             x: (i) => -200 * (i + 3),
+//             duration: 2,
+//             stagger: 1,
+//             ease: "power2.out",
+//             scrollTrigger: {
+//               trigger: ".Aboutsection2",
+//               start: "top 10%",
+//               end: "bottom 30%",
+//               scrub: true,
+//               markers: true,
+//               toggleActions: "play none none reverse",
+//               pin: true,
+//         },
+//       });
+//     });
+  
+//     return () => ctx.revert();
+// }, []);
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      const cards = gsap.utils.toArray(".program-card");
+  
+      gsap.from(".program-card", {
+        opacity: 0,
+        x: -150,
+        duration: 0.5,
+        ease: "power2.out",
+        stagger: 1,
+        scrollTrigger: {
+          trigger: ".program-card",
+          start: "top 80%",
+          scroller: "body",         
+          end: "+=0",
+          scrub: 3,
+          markers: false,
+          toggleActions: "play none none reverse",
+          pin: true,
+        },
+      });
+  });
+      
+    return () => ctx.revert();
+  }, []);
+  
+
+
   return (
     <section id="programs" className="dark-section">
-      <h2 className="section-title">OUR PROGRAMS</h2>
+      <h2 className="section-title" id='ourprograms'>OUR PROGRAMS</h2>
+      <div className="programs-wrapper">
       <div className="programs-grid">
         {programsData.map((program, index) => (
-          <motion.div
-            key={index}
-            className="program-card"
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1.05 }}
-            exit={{ opacity: 0, scale: 0.8 }}
-            transition={{
-              duration: 0.6,
-              ease: 'easeInOut',
-              delay: 0.1,
-            }}
-            viewport={{ once: false, amount: 0.4 }} 
-            whileHover={{ scale: 1.08 }}
-          >
+          <div key={index} className="program-card">
             <h4>{program.title}</h4>
             <p>{program.description}</p>
             <ul>
@@ -64,8 +103,9 @@ const ProgramsSection = () => {
               ))}
             </ul>
             <button className="cta-button">Join Now</button>
-          </motion.div>
+          </div>
         ))}
+      </div>
       </div>
     </section>
   );

@@ -65,18 +65,13 @@
      }
   }
   
-
-  
-
   .bg-logo {
     overflow-x: hidden;
-    text-shadow: 3 4px 4px rgb(0, 0, 0);
-    z-index: 2; 
+    z-index: 99 !important; 
   }
   
   .bg-abovelayer {
     overflow-x: hidden;
-    z-index: 5; 
   }
 
   .dividerborder {
@@ -84,10 +79,91 @@
   }
  
   .bg-belowlayer {
-    z-index: 1;
+    z-index: 2;
   }
 
 .hero-content .cta-button{
   border-radius: 0.8rem;
 }
 
+.img-lightBulb {
+  padding-bottom: 65vh;
+  z-index: 3; 
+}
+
+.img-lightBulbDark {
+  padding-bottom: 65vh;
+  z-index: 2; 
+}
+
+.hero h1 {
+  color: var(--primary);
+  font-family: 'octinspray';
+  font-size: 10rem;
+  font-weight: bold;
+  white-space: nowrap;
+  /* display: inline-block; */
+  padding-right: 15rem;
+}
+
+.marquee {
+  margin-top: 15rem;
+  display: flex;
+  justify-content: flex-end;
+  width: max-content;
+  position: absolute;
+  left: 99vw;
+}
+
+.equipment-container {
+  width:100vw;
+  z-index: 3;
+}
+
+.equipment-container-bg {
+  z-index: 1;
+}
+
+/* .Dreamland-heading1 {
+  font-size: 7rem !important;
+  font-weight: bold;
+  font-family: 'AgudaBlack' !important;
+  text-shadow: 0.5rem 0.5rem black;
+}
+
+.Dreamland-heading2 {
+  font-size: 8rem !important;
+  font-weight: bold;
+  z-index: 2;
+  font-family: 'AgudaBlack' !important;
+  text-shadow: 0.5rem 0.5rem black;
+} */
+
+.Dreamland-heading1,
+.Dreamland-heading2 {
+  font-size: 8rem !important;
+  font-family: 'AgudaBlack' !important;
+  position: absolute;
+  margin-top: 20rem;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-42%);
+  font-size: 4.5rem;
+  font-weight: 800;
+  text-align: start;
+  width: max-content;
+  pointer-events: none;
+}
+
+.Dreamland-heading1 {
+  color: #e7b826;
+  z-index: 2;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.Dreamland-heading2 {
+  font-size: 8.2rem !important;
+  color: black !important;
+  z-index: 0;
+  transform: translateX(-42%) translateY(6px);
+}

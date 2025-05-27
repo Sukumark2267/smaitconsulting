@@ -33,7 +33,7 @@ const testimonials = [
 const SuccessStories = () => {
   return (
     <>
-      <section className="dark-section">
+      <section className="dark-section" id='sucessstories'>
         <h2 className="section-title">SUCCESS STORIES</h2>
         <div className="testimonials-container">
           {testimonials.map((item, idx) => (
@@ -44,7 +44,7 @@ const SuccessStories = () => {
               exit={{ opacity: 0, scale: 0.8 }}
               transition={{ duration: 0.5, delay: idx * 0.2 }}
               viewport={{ once: false, amount: 0.3 }}
-              whileHover={{ scale: 1.08 }}
+              whileHover={{ scale: 1.06 }}
             >
               <div className="testimonial">
                 <p>&apos;{item.text}&apos;</p>

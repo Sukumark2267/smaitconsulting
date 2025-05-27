@@ -6,7 +6,7 @@ import HeroSection from '@/components/herosection';
 import AboutSection from '@/components/About';
 import ProgramsSection from '@/components/programs';
 import MembershipSection from '@/components/membership';
-// import TrainersSection from '@/components/Trainers';
+import Services from '@/components/Services';
 import SuccessStoriesSection from '@/components/successstories';
 import InstagramSection from '@/components/instagram';
 import ContactSection from '@/components/contact';
@@ -34,8 +34,8 @@ export default function Home() {
       <HeroSection />
       <AboutSection />
       <ProgramsSection />
+      <Services />
       <MembershipSection />
-      {/* <TrainersSection /> */}
       <SuccessStoriesSection />
       <InstagramSection />
       <ContactSection />
