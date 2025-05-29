@@ -47,6 +47,7 @@ export default function ComingSoon() {
       style={{
         background: "url('/images/elements/bg-texture.webp')",
         fontFamily: "'AgudaBlack', 'Roboto', 'Arial', sans-serif",
+        overflow: "hidden",
       }}
     >
       <Image
