@@ -45,7 +45,7 @@ export default function ComingSoon() {
     <div
       className="flex flex-col justify-center items-center min-h-dvh"
       style={{
-        background: "url('/images/elements/BGTexture_highquality-002.jpg')",
+        background: "url('/images/elements/bg-texture.webp')",
         fontFamily: "'AgudaBlack', 'Roboto', 'Arial', sans-serif",
       }}
     >
