@@ -62,7 +62,8 @@ export default function ComingSoon() {
     <div
       className="flex flex-col justify-center items-center h-dvh max-h-full"
       style={{
-        background: "url('/images/elements/bg-texture.webp')",
+        background: "url('/images/elements/bg.webp') no-repeat center center",
+        backgroundSize: "cover",
         fontFamily: "'AgudaBlack', 'Roboto', 'Arial', sans-serif",
       }}
     >
@@ -78,6 +79,7 @@ export default function ComingSoon() {
         className="text-5xl md:text-8xl text-center font-bold mb-5"
         style={{
           fontFamily: "octinspray",
+          textShadow: "0 2 15px #000",
           color: "#ffd700",
           letterSpacing: "2px",
         }}
