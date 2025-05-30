@@ -1,21 +1,25 @@
+import { NextResponse } from "next/server";
 import { transporter } from "@/lib/mailer";
 import {
   adminNewsletterTemplate,
   customerNewsletterTemplate,
 } from "@/lib/emailTemplates";
 
-export default async function POST(request) {
-  if (req.method !== "POST") return res.status(405).end();
+export async function POST(req) {
+  const { fname, email } = await req.json();
 
-  const { name, email } = req.body;
+  const adminEmail = "shantanux001@gmail.com";
 
-  const adminEmail = "dreamlandathletics@gmail.com";
+  // const fromMail = "Dreamland Athletics <dreamlandathletics@gmail.com>";
+  const fromMail = "Dreamland Athletics <shantanux001@gmail.com>";
+  const adminMail = adminNewsletterTemplate({ fname, email });
+  const customerMail = customerNewsletterTemplate({ fname });
 
-  const fromMail = "Dreamland Athletics <dreamlandathletics@gmail.com>";
-  const adminMail = adminNewsletterTemplate({ name, email });
-  const customerMail = customerNewsletterTemplate({ name });
+  
 
   try {
+    // console.log(process.env.EMAIL_USER, process.env.EMAIL_PASS, process.env.EMAIL_HOST);
+
     await transporter.sendMail({
       from: fromMail,
       to: adminEmail,
@@ -32,10 +36,16 @@ export default async function POST(request) {
       html: customerMail.html,
     });
 
-    res.status(200).json({ message: "Success" });
+    return NextResponse.json(
+      { message: "Success" },
+      { status: 200 }
+    );
+
   } catch (err) {
-    res
-      .status(500)
-      .json({ message: "Error sending email", error: err.message });
+    console.log(err);
+    return NextResponse.json(
+      { message: "Error sending email", error: err.message },
+      { status: 500 }
+    );
   }
 }

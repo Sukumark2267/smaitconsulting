@@ -1,54 +1,62 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import { z } from "zod";
 import { toast } from "sonner";
 
 const newsletterSchema = z.object({
-  name: z.string().min(1, "Name is required"),
+  fname: z.string().min(1, "Name is required"),
   email: z.string().email("Invalid email"),
 });
 
-const handleSubmit = async (e) => {
-  e.preventDefault();
-  const name = e.target.name.value;
-  const email = e.target.email.value;
-
-  // Validate with Zod
-  const result = newsletterSchema.safeParse({ name, email });
-  if (!result.success) {
-    // Show error (result.error.issues[0].message)
-    toast({
-      variant: "destructive",
-      title: "Something went wrong.",
-      description: "There was a problem with your request.",
-    });
-    alert(result.error.issues[0].message);
-    return;
-  }
-
-  // Send to API
-  const res = await fetch("/api/newsletter", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ name, email }),
-  });
-
-  // Handle response
-  if (res.ok) {
-    alert("Thank you for signing up!");
-  } else {
-    alert("There was an error. Please try again.");
-  }
-};
-
 export default function ComingSoon() {
+  const [form, setForm] = useState({fname: "", email: ""});
+
+  const handleChange = (e) => {
+    setForm({...form, [e.target.name]: e.target.value});
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const fname = form.fname;
+    const email = form.email;
+  
+    // Validate with Zod
+    const result = newsletterSchema.safeParse({ fname, email });
+    if (!result.success) {
+      // Show error (result.error.issues[0].message)
+      console.log(result.error);
+      toast.error("Something went wrong.", {
+        description: result.error.issues[0].message,
+      });
+      // alert(result.error.issues[0].message);
+      return;
+    }
+  
+    // Send to API
+    const res = await fetch("/api/newsletter", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ fname, email }),
+    });
+
+    console.log(res)
+    // Handle response
+    if (res.ok) {
+      toast.success("Thank you for signing up!");
+    } else {
+      toast.error("There was an error. Please try again.");
+    }
+  };
+
   return (
     <div
       className="flex flex-col justify-center items-center min-h-dvh"
       style={{
         background: "url('/images/elements/bg-texture.webp')",
         fontFamily: "'AgudaBlack', 'Roboto', 'Arial', sans-serif",
-        overflow: "hidden",
-      }}
+        }}
     >
       <Image
         src="/images/logo/logo-primary.png"
@@ -86,10 +94,13 @@ export default function ComingSoon() {
             </div>
           </div>
           <div className="col-span-12 lg:col-span-5 lg:col-start-8 mt-12 lg:mt-0">
-            <form>
+            <form onSubmit={handleSubmit}>
               <div className="form-group mb-6 mt-4">
                 <input
                   type="text"
+                  name="fname"
+                  value={form.fname}
+                  onChange={handleChange}
                   className="h-18 leading-10 bg-gray-950 bg-opacity-10 border border-transparent rounded-2xl focus:outline-none focus:border-[#ffd700] w-full placeholder:text-white pl-4"
                   placeholder="Name"
                 />
@@ -97,6 +108,9 @@ export default function ComingSoon() {
               <div className="form-group mb-4 mt-3">
                 <input
                   type="email"
+                  name="email"
+                  value={form.email}
+                  onChange={handleChange}
                   className="h-18 leading-10 bg-gray-950 bg-opacity-10 border border-transparent rounded-2xl focus:outline-none focus:border-[#ffd700] w-full placeholder:text-white pl-4"
                   placeholder="Email"
                 />
