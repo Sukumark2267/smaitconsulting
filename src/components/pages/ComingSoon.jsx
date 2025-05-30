@@ -67,6 +67,7 @@ export default function ComingSoon() {
         fontFamily: "'AgudaBlack', 'Roboto', 'Arial', sans-serif",
       }}
     >
+      <div className="absolute flex flex-col justify-center items-center top-0 left-0 w-full h-full bg-[rgba(0,0,0,0.46)]">
       <Image
         src="/images/logo/logo-primary.png"
         alt="Dreamland Athletics Gym"
@@ -79,7 +80,7 @@ export default function ComingSoon() {
         className="text-5xl md:text-8xl text-center font-bold mb-5"
         style={{
           fontFamily: "octinspray",
-          textShadow: "0 2 15px #000",
+          textShadow: "0 0 15px #000",
           color: "#ffd700",
           letterSpacing: "2px",
         }}
@@ -135,6 +136,7 @@ export default function ComingSoon() {
               </button>
             </form>
           </div>
+        </div>
         </div>
       </div>
     </div>
