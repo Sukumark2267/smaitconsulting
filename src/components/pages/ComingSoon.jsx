@@ -79,7 +79,7 @@ export default function ComingSoon() {
       <h1
         className="text-5xl md:text-8xl text-center font-bold mb-5"
         style={{
-          fontFamily: "octinspray",
+          fontFamily: "Swiss721Bold",
           textShadow: "0 0 15px #000",
           color: "#ffd700",
           letterSpacing: "2px",
