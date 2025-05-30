@@ -22,7 +22,7 @@ export default function About() {
 
   return (
   <>
-    <section id="about" >
+    <section id="about">
     <h2 className="section-title">OUR STORY</h2>
     <div className="about-content">
     <div className="about-text">

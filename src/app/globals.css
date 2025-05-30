@@ -75,7 +75,7 @@ body {
   color: var(--light-text);
   line-height: 1.6;
   overflow-x: hidden !important;
-  overflow-y: hidden !important;
+  /* overflow-y: hidden !important; */
 }
 
 header {
@@ -191,7 +191,7 @@ nav a:hover {
 }
 
 section {
-  padding: 4rem 2rem;
+  /* padding: 4rem 2rem; */
   max-width: 1200px;
   margin: auto;
 }
@@ -656,9 +656,9 @@ footer {
     flex-direction: column;
   }
 
-  section {
+  /* section {
     padding: 4rem 1rem;
-  }
+  } */
 }
 
 @theme inline {

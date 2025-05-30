@@ -60,7 +60,7 @@ export default function ComingSoon() {
 
   return (
     <div
-      className="flex flex-col justify-center items-center min-h-dvh"
+      className="flex flex-col justify-center items-center h-dvh max-h-full"
       style={{
         background: "url('/images/elements/bg-texture.webp')",
         fontFamily: "'AgudaBlack', 'Roboto', 'Arial', sans-serif",
@@ -71,17 +71,14 @@ export default function ComingSoon() {
         alt="Dreamland Athletics Gym"
         width={250}
         height={250}
-        className="bg-logo object-cover rounded-xl"
+        className="bg-logo w-[150px] md:w-[250px] h-auto object-cover rounded-xl mb-5"
         priority
       />
       <h1
-        className="text-center"
+        className="text-5xl md:text-8xl text-center font-bold mb-5"
         style={{
           fontFamily: "octinspray",
-          fontSize: "92px",
-          fontWeight: "bold",
           color: "#ffd700",
-          marginBottom: "10px",
           letterSpacing: "2px",
         }}
       >
