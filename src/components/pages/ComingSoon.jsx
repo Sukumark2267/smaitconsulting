@@ -67,7 +67,7 @@ export default function ComingSoon() {
         fontFamily: "'AgudaBlack', 'Roboto', 'Arial', sans-serif",
       }}
     >
-      <div className="absolute flex flex-col justify-center items-center top-0 left-0 w-full h-full bg-[rgba(0,0,0,0.46)]">
+      <div className="absolute flex flex-col justify-center items-center top-0 left-0 w-full h-full bg-[rgba(0,0,0,0.60)] bg-opacity-30">
       <Image
         src="/images/logo/logo-primary.png"
         alt="Dreamland Athletics Gym"
