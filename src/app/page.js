@@ -1,18 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
 
-import Navbar from '@/components/navbar';
-import HeroSection from '@/components/herosection';
-import AboutSection from '@/components/About';
-import ProgramsSection from '@/components/programs';
-import MembershipSection from '@/components/membership';
-import Services from '@/components/Services';
-import SuccessStoriesSection from '@/components/successstories';
-import InstagramSection from '@/components/instagram';
-import ContactSection from '@/components/contact';
-import Newsletter from '@/components/newsletter';
-import Banner from '@/components/Banner';
-import Footer from '@/components/footer';
 import Preloader from '@/components/Preloader';
 import ComingSoon from '@/components/pages/ComingSoon';
 
@@ -33,18 +21,6 @@ export default function Home() {
   return (
     <main>
       <ComingSoon/>
-      {/* <Navbar />
-      <HeroSection />
-      <AboutSection />
-      <ProgramsSection />
-      <Services />
-      <MembershipSection />
-      <Newsletter />
-      <SuccessStoriesSection />
-      <InstagramSection />
-      <ContactSection />
-      <Banner />
-      <Footer /> */}
     </main>
   );
 }
@@ -59,8 +35,8 @@ const styles = {
     backgroundColor: '#fff',
   },
   spinner: {
-    border: '6px solid #f3f3f3', // Light gray
-    borderTop: '6px solid #3498db', // Blue
+    border: '6px solid #f3f3f3', 
+    borderTop: '6px solid #3498db', 
     borderRadius: '50%',
     width: '50px',
     height: '50px',
