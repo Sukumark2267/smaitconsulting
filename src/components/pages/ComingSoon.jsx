@@ -178,8 +178,7 @@ export default function ComingSoon() {
                         Elite Training
                       </CardTitle>
                       <CardDescription className="text-gray-400">
-                        Professional-grade equipment and personalized training
-                        programs designed to maximize your potential.
+                        Pro-grade equipment and custom training to maximize your potential.
                       </CardDescription>
                     </CardHeader>
                   </Card>
@@ -243,8 +242,8 @@ export default function ComingSoon() {
                 </div>
 
                 <div className="space-y-8 w-full lg:w-2/3">
-                  <div className="flex items-start space-x-4 bg-white/10 lg:bg-transparent lg:hover:bg-white/10 p-4 rounded-lg transition-colors duration-300">
-                    <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0 transform transition-transform duration-300 hover:rotate-12">
+                  <div className="group flex items-start space-x-4 bg-white/10 lg:bg-transparent lg:hover:bg-white/10 p-4 rounded-lg transition-colors duration-300">
+                    <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0 transform transition-transform duration-300 group-hover:rotate-12">
                       <span className="text-xl font-bold text-black">🏋️</span>
                     </div>
                     <div>
@@ -257,8 +256,23 @@ export default function ComingSoon() {
                     </div>
                   </div>
 
-                  <div className="flex items-start space-x-4 bg-white/10 lg:bg-transparent lg:hover:bg-white/10 p-4 rounded-lg transition-colors duration-300">
-                    <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0 transform transition-transform duration-300 hover:rotate-12">
+                  <div className="group flex items-start space-x-4 bg-white/10 lg:bg-transparent lg:hover:bg-white/10 p-4 rounded-lg transition-colors duration-300">
+                  <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0 transform transition-transform duration-300 group-hover:rotate-12">
+                    <span className="text-xl font-bold text-black">🏃</span>
+                  </div>
+                  <div>
+                    <h3 className="text-lg md:text-xl font-bold text-white mb-2">
+                      High-Intensity Interval Training Zone
+                    </h3>
+                    <p className="text-sm md:text-lg text-gray-400">
+                      High-intensity interval training equipment with entertainment systems to keep you motivated.
+                    </p>
+                  </div>
+                </div>
+
+
+                <div className="group flex items-start space-x-4 bg-white/10 lg:bg-transparent lg:hover:bg-white/10 p-4 rounded-lg transition-colors duration-300">
+                    <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0 transform transition-transform duration-300 group-hover:rotate-12">
                       <span className="text-xl font-bold text-black">🏋️</span>
                     </div>
                     <div>
@@ -268,21 +282,6 @@ export default function ComingSoon() {
                       <p className="text-sm md:text-lg text-gray-400">
                         Olympic-standard weightlifting equipment and dedicated
                         powerlifting area with professional platforms.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start space-x-4 bg-white/10 lg:bg-transparent lg:hover:bg-white/10 p-4 rounded-lg transition-colors duration-300">
-                    <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0 transform transition-transform duration-300 hover:rotate-12">
-                      <span className="text-xl font-bold text-black">🏃</span>
-                    </div>
-                    <div>
-                      <h3 className="text-lg md:text-xl font-bold text-white mb-2">
-                        High-Intensity Interval Training Zone
-                      </h3>
-                      <p className="text-sm md:text-lg text-gray-400">
-                        High-intensity interval training equipment with
-                        entertainment systems to keep you motivated.
                       </p>
                     </div>
                   </div>
@@ -498,7 +497,7 @@ export default function ComingSoon() {
               variant="outline"
               className="text-gray-400 border-gray-600 hover:border-primary hover:text-primary transition-colors duration-300"
             >
-              Coming Soon
+              World-Class Facilities
             </Badge>
             <Badge
               variant="outline"
