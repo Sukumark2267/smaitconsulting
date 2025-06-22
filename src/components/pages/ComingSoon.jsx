@@ -569,7 +569,7 @@ export default function ComingSoon() {
             </Badge>
             <Badge
               variant="outline"
-              className="footer-badge *:text-gray-400 border-gray-600 hover:border-primary hover:text-primary transition-colors duration-300"
+              className="footer-badge text-gray-400 border-gray-600 hover:border-primary hover:text-primary transition-colors duration-300"
             >
               Professional Coaching
             </Badge>
