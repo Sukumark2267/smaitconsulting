@@ -20,6 +20,63 @@ const newsletterSchema = z.object({
   email: z.string().email("Invalid email"),
 });
 
+
+const thumbnails = [
+  "images/bg-slideshow/2.webp",
+  "images/bg-slideshow/1.webp",
+  "images/bg-slideshow/3.webp",
+  "images/bg-slideshow/4.webp",
+  "images/bg-slideshow/5.webp",
+  "images/bg-slideshow/6.webp",
+  "images/bg-slideshow/7.webp",
+  "images/bg-slideshow/8.webp",
+  "images/bg-slideshow/9.webp",
+  "images/bg-slideshow/10.webp",
+  "images/bg-slideshow/11.webp",
+  "images/bg-slideshow/12.webp",
+  "images/bg-slideshow/13.webp",
+  "images/bg-slideshow/14.webp",
+  "images/bg-slideshow/15.webp",
+  "images/bg-slideshow/16.webp",
+  "images/bg-slideshow/17.webp",
+  "images/bg-slideshow/18.webp",
+  "images/bg-slideshow/19.webp",
+  "images/bg-slideshow/20.webp",
+  "images/bg-slideshow/21.webp",
+  "images/bg-slideshow/22.webp",
+  "images/bg-slideshow/23.webp",
+  "images/bg-slideshow/24.webp",
+  "images/bg-slideshow/25.webp",
+  "images/bg-slideshow/26.webp",
+  "images/bg-slideshow/27.webp",
+  "images/bg-slideshow/28.webp",
+  "images/bg-slideshow/29.webp",
+  "images/bg-slideshow/30.webp",
+  "images/bg-slideshow/31.webp",
+  "images/bg-slideshow/32.webp",
+  "images/bg-slideshow/33.webp",
+  "images/bg-slideshow/34.webp",
+  "images/bg-slideshow/35.webp",
+  "images/bg-slideshow/36.webp",
+  "images/bg-slideshow/37.webp",
+  "images/bg-slideshow/38.webp",
+  "images/bg-slideshow/39.webp",
+  "images/bg-slideshow/40.webp",
+  "images/bg-slideshow/41.webp",
+];
+
+const scrollingImages = [...thumbnails, ...thumbnails];
+
+const shuffle = (array) => {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+};
+
+
 export default function ComingSoon() {
   let [loading, setLoading] = useState(false);
   const [form, setForm] = useState({ fname: "", email: "" });
@@ -70,71 +127,76 @@ export default function ComingSoon() {
     <div className="landing-page min-h-screen bg-black text-white">
       {/* Hero Section with Video */}
       <section className="relative h-screen overflow-hidden">
-        {/* Video Background */}
-        <div className="absolute inset-0 z-0">
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="w-full h-full object-cover"
+      {/* Background Collage */}
+      <div className="absolute inset-0 z-0 flex flex-col space-y-1 overflow-hidden">
+      {[...Array(6)].map((_, rowIndex) => {
+        // Shuffle + double the array to ensure smooth looping
+        const rowImages = [...shuffle(thumbnails), ...shuffle(thumbnails)];
+
+        return (
+          <div
+            key={rowIndex}
+            className={`flex whitespace-nowrap ${
+              rowIndex % 2 === 0 ? "animate-scroll-ltr" : "animate-scroll-rtl"
+            }`}
           >
-            <source src="/videos/gym-hero.mp4" type="video/mp4" />
-            {/* Fallback background image */}
-            <div
-              className="w-full h-full bg-cover bg-center bg-no-repeat"
-              style={{
-                backgroundImage: "url('/images/elements/bg-texture.webp')",
-              }}
-            />
-          </video>
-        </div>
-
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-black/60 z-10"></div>
-
-        {/* Hero Content */}
-        <div className="relative z-20 flex flex-col justify-center items-center h-full px-4 text-center">
-          <Image
-            src="/images/logo/logo-primary.png"
-            alt="Dreamland Athletics Gym"
-            width={300}
-            height={300}
-            className="w-32 md:w-48 lg:w-64 h-auto object-cover rounded-xl mb-5"
-            priority
-          />
-
-          <Badge variant="outline" className="mb-6 text-primary border-primary">
-            Premium Fitness Experience
-          </Badge>
-
-          <h1
-            className="text-4xl md:text-6xl lg:text-8xl font-bold mb-6 leading-tight text-primary"
-            style={{
-              fontFamily: "Swiss721Bold",
-              textShadow: "0 0 20px rgba(0,0,0,0.8)",
-              letterSpacing: "2px",
-            }}
-          >
-            Dreamland Athletics
-          </h1>
-
-          <p className="text-xl md:text-2xl lg:text-3xl mb-8 max-w-4xl leading-relaxed">
-            Where Champions Are Made
-          </p>
-
-          <p className="text-base md:text-xl mb-12 max-w-3xl text-gray-300 leading-relaxed">
-            Your journey to greatness starts here. Join the elite community of
-            athletes who dare to dream big and work harder.
-          </p>
-
-          <div>
-            <Link href="#" className="btn--primary">
-              Start Your Journey
-            </Link>
+            {rowImages.map((src, idx) => (
+              <img
+                key={`${rowIndex}-${idx}`}
+                src={src}
+                alt={`Thumb ${idx}`}
+                className="w-48 h-32 md:w-60 md:h-40 object-cover m-[1px] rounded"
+              />
+            ))}
           </div>
-        </div>
-      </section>
+        );
+      })}
+    </div>
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-black/60 z-10" />
+
+      {/* Hero Content */}
+      <div className="relative z-20 flex flex-col justify-center items-center h-full px-4 text-center">
+        <Image
+          src="/images/logo/logo-primary.png"
+          alt="Dreamland Athletics Gym"
+          width={256}
+          height={256}
+          className="w-32 md:w-48 lg:w-64 h-auto object-contain rounded-xl mb-5"
+          priority
+        />
+
+        <Badge variant="outline" className="mb-6 text-primary border-primary">
+          Premium Fitness Experience
+        </Badge>
+
+        <h1
+          className="text-4xl md:text-6xl lg:text-8xl font-bold mb-6 leading-tight text-primary"
+          style={{
+            fontFamily: "Swiss721Bold",
+            textShadow: "0 0 20px rgba(0,0,0,0.8)",
+            letterSpacing: "2px",
+          }}
+        >
+          Dreamland Athletics
+        </h1>
+
+        <p className="text-xl md:text-2xl lg:text-3xl mb-8 max-w-4xl leading-relaxed text-white">
+          Where Champions Are Made
+        </p>
+
+        <p className="text-base md:text-xl mb-12 max-w-3xl text-gray-300 leading-relaxed">
+          Your journey to greatness starts here. Join the elite community of
+          athletes who dare to dream big and work harder.
+        </p>
+        <Link
+          href="#"
+          className="btn--primary inline-block bg-primary hover:bg-primary/90 text-white font-bold py-3 px-6 rounded-lg transition duration-300 text-lg"
+        >
+          Start Your Journey
+        </Link>
+      </div>
+    </section>
 
       {/* Main content */}
       <div className="relative my-5">
