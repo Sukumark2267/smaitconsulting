@@ -192,7 +192,7 @@ export default function ComingSoon() {
 
         <h1 id="Hero-Heading"
               ref={headingRef}
-          className="text-4xl md:text-6xl lg:text-8xl font-bold mb-6 leading-tight text-primary"
+          className="text-3xl md:text-6xl lg:text-8xl font-bold mb-6 leading-tight text-primary"
           style={{
             fontFamily: "Swiss721Bold",
             textShadow: "0 0 20px rgba(0,0,0,0.8)",
