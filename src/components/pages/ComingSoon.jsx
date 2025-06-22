@@ -66,6 +66,17 @@ const thumbnails = [
   "images/bg-slideshow/39.webp",
   "images/bg-slideshow/40.webp",
   "images/bg-slideshow/41.webp",
+  "images/bg-slideshow/42.webp",
+  "images/bg-slideshow/43.webp",
+  "images/bg-slideshow/44.webp",
+  "images/bg-slideshow/45.webp",
+  "images/bg-slideshow/46.webp",
+  "images/bg-slideshow/47.webp",
+  "images/bg-slideshow/48.webp",
+  "images/bg-slideshow/49.webp",
+  "images/bg-slideshow/50.webp",
+  "images/bg-slideshow/51.webp",
+  "images/bg-slideshow/52.webp",
 ];
 
 const scrollingImages = [...thumbnails, ...thumbnails];
