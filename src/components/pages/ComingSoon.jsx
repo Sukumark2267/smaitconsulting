@@ -557,19 +557,19 @@ export default function ComingSoon() {
           <div className="flex justify-center space-x-6 mb-8">
             <Badge
               variant="outline"
-              className="text-gray-400 border-gray-600 hover:border-primary hover:text-primary transition-colors duration-300"
+              className="footer-badge text-gray-400 border-gray-600 hover:border-primary hover:text-primary transition-colors duration-300"
             >
               World-Class Facilities
             </Badge>
             <Badge
               variant="outline"
-              className="text-gray-400 border-gray-600 hover:border-primary hover:text-primary transition-colors duration-300"
+              className="footer-badge text-gray-400 border-gray-600 hover:border-primary hover:text-primary transition-colors duration-300"
             >
               Elite Training
             </Badge>
             <Badge
               variant="outline"
-              className="text-gray-400 border-gray-600 hover:border-primary hover:text-primary transition-colors duration-300"
+              className="footer-badge *:text-gray-400 border-gray-600 hover:border-primary hover:text-primary transition-colors duration-300"
             >
               Professional Coaching
             </Badge>
