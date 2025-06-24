@@ -149,7 +149,6 @@ export default function ComingSoon() {
       stagger: 0.05,
     });
 
-    // Clean up
     return () => split.revert();
   }, []);
 
