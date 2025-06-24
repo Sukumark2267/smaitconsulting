@@ -138,19 +138,19 @@ export default function ComingSoon() {
     }
   };
 
-  useEffect(() => {
-    const split = new SplitType(headingRef.current, { types: 'chars' });
+  // useEffect(() => {
+  //   const split = new SplitType(headingRef.current, { types: 'chars' });
 
-    gsap.from('.char', {
-      y: -100,
-      opacity: 0,
-      duration: 0.6,
-      ease: 'bounce.out',
-      stagger: 0.05,
-    });
+  //   gsap.from('.char', {
+  //     y: -100,
+  //     opacity: 0,
+  //     duration: 0.6,
+  //     ease: 'bounce.out',
+  //     stagger: 0.05,
+  //   });
 
-    return () => split.revert();
-  }, []);
+  //   return () => split.revert();
+  // }, []);
 
 
   return (
