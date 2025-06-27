@@ -6,6 +6,14 @@
 @custom-variant dark (&:is(.dark *));
 
 @font-face {
+  font-family: "AlternateGothicNo1";
+  src: url("/fonts/alternategothicno1.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
   font-family: "AgudaBlack";
   src: url("/fonts/AgudaBlack.ttf") format("truetype");
   font-weight: normal;
@@ -156,7 +164,6 @@ nav a:hover {
   font-weight: bold;
   font-family: "Swiss721Bold";
   font-size: 3.5rem;
-  margin-bottom: 1rem;
   text-transform: uppercase;
 }
 

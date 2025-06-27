@@ -175,7 +175,7 @@ export default function ComingSoon() {
                 key={`${rowIndex}-${idx}`}
                 src={src}
                 alt={`Thumb ${idx}`}
-                className="w-48 h-32 md:w-60 md:h-40 object-cover m-[1px] rounded"
+                className="w-40 h-20 md:w-30 md:h-40 object-cover m-[1px] rounded"
               />
             ))}
           </div>
@@ -186,40 +186,51 @@ export default function ComingSoon() {
       <div className="absolute inset-0 bg-black/60 z-10" />
 
       {/* Hero Content */}
-      <div className="relative z-20 flex flex-col justify-center items-center h-full px-4 text-center">
+      <div className="relative z-20 flex flex-col justify-start items-center h-full px-4 mt-20 text-center">
         <Image
           src="/images/logo/logo-primary.png"
           alt="Dreamland Athletics Gym"
           width={256}
           height={256}
-          className="w-32 md:w-48 lg:w-64 h-auto object-contain rounded-xl mb-5"
+          className="w-32 md:w-48 lg:w-36 h-auto object-contain rounded-xl"
           priority
         />
-
-        <Badge variant="outline" className="mb-6 text-primary border-primary">
-          Premium Fitness Experience
-        </Badge>
-
         <h1 id="Hero-Heading"
               ref={headingRef}
-          className="text-3xl md:text-6xl lg:text-8xl font-bold mb-6 leading-tight text-white"
+          className="text-3xl md:text-md lg:text-4xl font-bold px-100 pt-2 pb-10 leading-tight text-white border-b-2 border-primary"
           style={{
             fontFamily: "Swiss721Black",
             textShadow: "0 0 20px rgba(0,0,0,0.8)",
             letterSpacing: "2px",
           }}
         >
-          DREAMLAND ATHLETICS
+          DREAMLAND <br/> ATHLETICS
         </h1>
 
-        <p className="text-xl md:text-2xl lg:text-3xl mb-8 max-w-4xl leading-relaxed text-white">
-          Where Champions Are Made
-        </p>
+        {/* <Badge variant="outline" className="mb-6 text-primary border-primary">
+          Premium Fitness Experience
+        </Badge> */}
 
+          <h1 id="Hero-Heading"
+          ref={headingRef}
+          className="text-[6rem] md:text-[10rem] lg:text-[15rem] m-0 leading-tight text-white md:h-40 sm:h-10 lg:h-57"
+          style={{
+            fontFamily: "AlternateGothicNo1",
+            textShadow: "0 0 20px rgba(0,0,0,0.8)",
+            letterSpacing: "2px",
+          }}
+        >
+          BE A TURTLE
+        </h1>
+
+        <p className="text-xl md:text-[2.05rem] lg:text-[3rem] mb-8 leading-relaxed text-white">
+          SLOW. STEADY. UNSTOPPABLE.
+        </p>
+{/* 
         <p className="text-base md:text-xl mb-12 max-w-3xl text-gray-300 leading-relaxed">
           Your journey to greatness starts here. Join the elite community of
           athletes who dare to dream big and work harder.
-        </p>
+        </p> */}
         <Link
           href=".Newsletter"
           className="btn--primary inline-block bg-primary hover:bg-primary/90 text-white font-bold py-3 px-6 rounded-lg transition duration-300 text-lg"
