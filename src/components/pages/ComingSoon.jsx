@@ -175,7 +175,7 @@ export default function ComingSoon() {
                 key={`${rowIndex}-${idx}`}
                 src={src}
                 alt={`Thumb ${idx}`}
-                className="w-40 h-20 md:w-30 md:h-40 object-cover m-[1px] rounded"
+                className="w-40 h-20 md:w-80 md:h-40 object-cover m-[1px] rounded"
               />
             ))}
           </div>
