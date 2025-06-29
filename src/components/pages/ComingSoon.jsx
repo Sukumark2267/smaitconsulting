@@ -197,14 +197,14 @@ export default function ComingSoon() {
         />
         <h1 id="Hero-Heading"
               ref={headingRef}
-          className="text-3xl md:text-md lg:text-4xl font-bold px-100 pt-2 pb-10 leading-tight text-white border-b-2 border-primary"
+          className="text-3xl md:text-md lg:text-4xl font-bold lg:px-100 md:px-50 px-15 pt-2 pb-10 leading-tight text-white border-b-2 border-primary"
           style={{
             fontFamily: "Swiss721Black",
             textShadow: "0 0 20px rgba(0,0,0,0.8)",
             letterSpacing: "2px",
           }}
         >
-          DREAMLAND <br/> ATHLETICS
+          DREAMLAND <br/> ATHLETICS-
         </h1>
 
         {/* <Badge variant="outline" className="mb-6 text-primary border-primary">
