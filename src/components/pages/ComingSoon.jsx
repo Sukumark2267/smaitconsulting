@@ -232,7 +232,7 @@ export default function ComingSoon() {
         </p> */}
         <div className="lg:m-15 md:m-30">
         <Link
-          href=".Newsletter"
+          href="#Newsletter"
           className="btn--primary bg-primary hover:bg-primary/90 text-white font-bold py-5 px-10 rounded-lg transition duration-300 text-md"
         >
           LET'S GO !!
@@ -258,172 +258,138 @@ export default function ComingSoon() {
           <section className="py-16 px-4 rounded-xl flex items-center my-5">
             <div className="max-w-7xl w-full mx-auto">
               <div className="text-center mb-16">
-                <Badge
+                {/* <Badge
                   variant="secondary"
                   className="mb-4 text-primary border-primary"
                 >
                   About Dreamland Athletics
-                </Badge>
-                <h2 className="text-2xl md:text-5xl font-bold mb-5 text-primary">
-                  Your Hustle Starts Here
+                </Badge> */}
+                <h2 className="text-6xl md:text-8xl lg:text-8xl mb-5 uppercase text-primary">
+                  Services We Offer
                 </h2>
-                <p className="text-sm md:text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                  At Dreamland Athletics, we believe that every champion begins
-                  with a dream. Our state-of-the-art facility and expert
-                  trainers provide the perfect environment to transform your
-                  aspirations into achievements.
+                <p className="text-2xl md:text-2x1 text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                  At Dreamland Athletics, we offer variety of services ranging from fitness and wellness to nutrition and lifestyle coaching.
                 </p>
               </div>
 
-              <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-10">
+              <div className="w-full grid grid-cols lg:grid-cols-5 md:grid-cols-1 gap-20 md:px-55 px-20 lg:px-0">
+              <div>
+                  <Card className="bg-white/10 md:bg-white/5 md:hover:bg-white/10 border-primary/20 hover:border-primary transition-all duration-300">
+                    <CardHeader className="text-center">
+                      <Image src="/images/elements/DLICONS/icon_dl-01.png" alt="Gym Facilities" width={100} height={100} className="rounded-2xl shadow-2xl mx-auto transition-shadow duration-300 object-cover lg:aspect-[1/1]" />
+                      <CardTitle className="text-white">
+                      </CardTitle>
+                    </CardHeader>
+                  </Card>
+                  <h1 className="text-white text-center text-2xl pt-5 uppercase">One-on-One <br/> Training</h1>
+
+                </div>
+                
                 <div>
                   <Card className="bg-white/10 md:bg-white/5 md:hover:bg-white/10 border-primary/20 hover:border-primary transition-all duration-300">
                     <CardHeader className="text-center">
+                      <Image src="/images/elements/DLICONS/icon_dl-02.png" alt="Gym Facilities" width={100} height={100} className="rounded-2xl shadow-2xl mx-auto transition-shadow duration-300 object-cover lg:aspect-[1/1]" />
                       <CardTitle className="text-white">
-                        Elite Training
                       </CardTitle>
-                      <CardDescription className="text-gray-400">
-                        Pro-grade equipment and custom training to maximize your potential.
-                      </CardDescription>
                     </CardHeader>
                   </Card>
+                  <h1 className="text-white text-center text-2xl pt-5 uppercase">Group <br/> Fitness</h1>
+                </div>
+                
+                <div>
+                  <Card className="bg-white/10 md:bg-white/5 md:hover:bg-white/10 border-primary/20 hover:border-primary transition-all duration-300">
+                    <CardHeader className="text-center">
+                      <Image src="/images/elements/DLICONS/icon_dl-03.png" alt="Gym Facilities" width={100} height={100} className="rounded-2xl shadow-2xl mx-auto transition-shadow duration-300 object-cover lg:aspect-[1/1]" />
+                      <CardTitle className="text-white"> 
+                      </CardTitle>
+                    </CardHeader>
+                  </Card>
+                  <h1 className="text-white text-center text-2xl pt-5 uppercase">HIIT <br/> Class</h1>
+                </div>
+                
+                <div>
+                  <Card className="bg-white/10 md:bg-white/5 md:hover:bg-white/10 border-primary/20 hover:border-primary transition-all duration-300">
+                    <CardHeader className="text-center">
+                      <Image src="/images/elements/DLICONS/icon_dl-04.png" alt="Gym Facilities" width={100} height={100} className="rounded-2xl shadow-2xl mx-auto transition-shadow duration-300 object-cover lg:aspect-[1/1]" />
+                      <CardTitle className="text-white">
+                      </CardTitle>
+                    </CardHeader>
+                  </Card>
+                  <h1 className="text-white text-center text-2xl pt-5 uppercase">Kids <br/> Workshop</h1>
+
                 </div>
 
                 <div>
                   <Card className="bg-white/10 md:bg-white/5 md:hover:bg-white/10 border-primary/20 hover:border-primary transition-all duration-300">
                     <CardHeader className="text-center">
+                      <Image src="/images/elements/DLICONS/icon_dl-05.png" alt="Gym Facilities" width={100} height={100} className="rounded-2xl shadow-2xl mx-auto transition-shadow duration-300 object-cover lg:aspect-[1/1]" />
                       <CardTitle className="text-white">
-                        Expert Coaches
                       </CardTitle>
-                      <CardDescription className="text-gray-400">
-                        Learn from certified trainers and former athletes who
-                        understand what it takes to reach the top.
-                      </CardDescription>
                     </CardHeader>
                   </Card>
-                </div>
+                  <h1 className="text-white text-center text-2xl pt-5 uppercase">3D STYKU <br/> Body Scan</h1>
 
-                <div>
-                  <Card className="bg-white/10 md:bg-white/5 md:hover:bg-white/10 border-primary/20 hover:border-primary transition-all duration-300">
-                    <CardHeader className="text-center">
-                      <CardTitle className="text-white">
-                        State-of-the-art Equipment
-                      </CardTitle>
-                      <CardDescription className="text-gray-400">
-                        State-of-the-art equipment and facilities to help you
-                        achieve your goals.
-                      </CardDescription>
-                    </CardHeader>
-                  </Card>
                 </div>
               </div>
             </div>
           </section>
 
           {/* Features Section */}
-          <section className="py-16 px-4 rounded-xl flex items-center my-5">
-            <div className="max-w-7xl mx-auto">
+          <section className="py-16 px-10 md:px-10 lg:px-40 rounded-xl items-center my-5">
+            <div className="mx-auto">
               <div className="text-center mb-16">
-                <Badge
-                  variant="outline"
-                  className="mb-4 text-primary border-primary"
-                >
-                  World-Class Facilities
-                </Badge>
-                <h2 className="text-2xl md:text-5xl font-bold mb-6 text-white">
+                {/* <h2 className="text-4xl md:text-5xl lg:text-8xl mb-6 text-white">
                   Everything You Need to Succeed
-                </h2>
+                </h2> */}
               </div>
 
-              <div className="flex flex-col lg:flex-row-reverse gap-12 items-center h-full">
-                <div className="relative w-full lg:w-1/3 h-full">
-                  <Image
-                    src="/images/elements/bg.webp"
-                    alt="Gym Facilities"
-                    width={600}
-                    height={400}
-                    className="rounded-2xl shadow-2xl hover:shadow-primary/20 transition-shadow duration-300 w-full h-full object-cover lg:aspect-[4/5]"
-                  />
-                </div>
+              <div className="flex flex-col gap-12 justify-center h-full">
+                  <section id="contact">
+                  {/* <h2 className="section-title text-3xl font-bold text-center mb-10">GET IN TOUCH</h2> */}
 
-                <div className="space-y-8 w-full lg:w-2/3">
-                  <div className="group flex items-start space-x-4 bg-white/10 lg:bg-transparent lg:hover:bg-white/10 p-4 rounded-lg transition-colors duration-300">
-                    <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0 transform transition-transform duration-300 group-hover:rotate-12">
-                      <span className="text-xl font-bold text-black">🏋️</span>
-                    </div>
-                    <div>
-                      <h3 className="text-lg md:text-xl font-bold text-white mb-2">
-                        Stretching Area
-                      </h3>
-                      <p className="text-sm md:text-lg text-gray-400">
-                        Stretching area with professional stretching equipment.
-                      </p>
-                    </div>
-                  </div>
+                  <div className="flex flex-col md:flex-row lg:flex-row gap-20 items-start justify-center">
+                    {/* Contact Info */}
+                    <div className="flex-2 space-y-6">
+                      <div className="contact-info">
+                        <h4 className="font-bold text-3xl">LOCATION</h4>
+                        <p className="text-xl font-light">860 N Park Dr, Brampton, ON L6S 4N5, Canada</p>
+                      </div>
 
-                  <div className="group flex items-start space-x-4 bg-white/10 lg:bg-transparent lg:hover:bg-white/10 p-4 rounded-lg transition-colors duration-300">
-                  <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0 transform transition-transform duration-300 group-hover:rotate-12">
-                    <span className="text-xl font-bold text-black">🏃</span>
-                  </div>
-                  <div>
-                    <h3 className="text-lg md:text-xl font-bold text-white mb-2">
-                      High-Intensity Interval Training Zone
-                    </h3>
-                    <p className="text-sm md:text-lg text-gray-400">
-                      High-intensity interval training equipment with entertainment systems to keep you motivated.
-                    </p>
-                  </div>
-                </div>
+                      <div className="contact-info">
+                        <h4 className="font-bold text-3xl">HOURS</h4>
+                        <p className="text-xl font-light">Monday–Friday: 5am – 10pm</p>
+                        <p className="text-xl font-light">Saturday–Sunday: 7am – 8pm</p>
+                      </div>
 
+                      <div className="contact-info">
+                        <h4 className="font-bold text-3xl">CONTACT</h4>
+                        <a className="block text-xl text-blue-600 hover:underline font-light" href="tel:+19055551234">(905) 555-1234</a>
+                        <a className="block text-xl text-blue-600 hover:underline font-light" href="mailto:info@dreamlandathletics.com">info@dreamlandathletics.com</a>
+                        <a className="block text-xl text-blue-600 hover:underline font-light" href="https://www.instagram.com/dreamland_brampton" target="_blank" rel="noopener noreferrer">
+                          @dreamland_brampton
+                        </a>
+                      </div>
+                    </div>
 
-                <div className="group flex items-start space-x-4 bg-white/10 lg:bg-transparent lg:hover:bg-white/10 p-4 rounded-lg transition-colors duration-300">
-                    <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0 transform transition-transform duration-300 group-hover:rotate-12">
-                      <span className="text-xl font-bold text-black">🏋️</span>
+                    {/* Contact Image */}
+                    <div className="flex-4">
+                    <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d720.7687165970583!2d-79.74951353497413!3d43.72977157442773!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b173a1b0a0e17%3A0xdadb9bd5d608dd4e!2sDreamland%20Athletics!5e0!3m2!1sen!2sin!4v1747585502192!5m2!1sen!2sin"
+                            width="100%"
+                            height="450"
+                            allowFullScreen
+                            loading="lazy"
+                            style={{ border: 1 }}
+                            className="rounded-lg"
+                            referrerPolicy="no-referrer-when-downgrade"
+                          ></iframe>
                     </div>
-                    <div>
-                      <h3 className="text-lg md:text-xl font-bold text-white mb-2">
-                        Strength Training Zone
-                      </h3>
-                      <p className="text-sm md:text-lg text-gray-400">
-                        Olympic-standard weightlifting equipment and dedicated
-                        powerlifting area with professional platforms.
-                      </p>
                     </div>
-                  </div>
+                    </section>
+                    </div>
+                    </div>
+                    </section>
 
-                  {/* <div className="flex items-start space-x-4 bg-white/10 lg:bg-transparent lg:hover:bg-white/10 p-4 rounded-lg transition-colors duration-300">
-                    <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0 transform transition-transform duration-300 hover:rotate-12">
-                      <span className="text-xl font-bold text-black">🥊</span>
-                    </div>
-                    <div>
-                      <h3 className="text-lg md:text-xl font-bold text-white mb-2">
-                        Combat Sports Arena
-                      </h3>
-                      <p className="text-sm md:text-lg text-gray-400">
-                        Fully equipped boxing and MMA training area with
-                        professional-grade equipment.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start space-x-4 bg-white/10 lg:bg-transparent lg:hover:bg-white/10 p-4 rounded-lg transition-colors duration-300">
-                    <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0 transform transition-transform duration-300 hover:rotate-12">
-                      <span className="text-xl font-bold text-black">🧘</span>
-                    </div>
-                    <div>
-                      <h3 className="text-lg md:text-xl font-bold text-white mb-2">
-                        Recovery & Wellness
-                      </h3>
-                      <p className="text-sm md:text-lg text-gray-400">
-                        Dedicated space for stretching, yoga, and recovery with
-                        premium amenities.
-                      </p>
-                    </div>
-                  </div> */}
-                </div>
-              </div>
-            </div>
-          </section>
 
           {/* Testimonials Section */}
           {/* <section className="py-16 px-4 rounded-xl flex items-center my-5">
@@ -520,15 +486,15 @@ export default function ComingSoon() {
           </section> */}
 
           {/* Newsletter Section */}
-          <section className="Newsletter py-16 px-4 rounded-xl flex items-center my-5">
+          <section id="Newsletter" className="Newsletter py-16 px-4 rounded-xl flex items-center my-5">
             <div className="max-w-4xl mx-auto text-center">
-              <Badge
+              {/* <Badge
                 variant="outline"
                 className="mb-6 text-primary border-primary"
               >
                 Join the Movement
-              </Badge>
-              <h2 className="text-2xl md:text-5xl font-bold mb-6 text-white">
+              </Badge> */}
+              <h2 className="text-4xl md:text-5xl lg:text-8xl mb-6 text-white">
                 Be the First to Know
               </h2>
               <p className="text-sm md:text-lg text-gray-300 mb-12 leading-relaxed">
@@ -536,7 +502,7 @@ export default function ComingSoon() {
                 the first to hear about our grand opening.
               </p>
 
-              <Card className="bg-white/5 border-primary/20 py-8 px-4">
+              <Card className="bg-white/5 border-primary/20 py-8 px-10">
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <input
@@ -561,7 +527,7 @@ export default function ComingSoon() {
 
                   <button
                     type="submit"
-                    className="btn--primary transition-all duration-300"
+                    className="btn--primary transition-all duration-300 px-5 pb-3 pt-4"
                     disabled={loading}
                   >
                     {loading ? (

@@ -160,6 +160,10 @@ nav a:hover {
   max-width: 800px;
 }
 
+h2 {
+  font-family: 'AlternateGothicNo1';  
+}
+
 .hero h2 {
   font-weight: bold;
   font-family: "Swiss721Bold";
