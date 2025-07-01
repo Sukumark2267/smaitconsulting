@@ -2,6 +2,8 @@
 
 import React, { useEffect } from 'react';
 import { FaInstagram } from 'react-icons/fa';
+import SocialButtons from '../SocialButtons';
+
 
 const InstagramFeed = () => {
   // Load Elfsight script only on the client
@@ -14,8 +16,10 @@ const InstagramFeed = () => {
 
   return (
     <section id="instagram">
-      <h2 className="section-title">#DREAMLANDLIFE</h2>
-      <p>
+        <h2 className="text-6xl md:text-8xl lg:text-8xl  my-5 text-center uppercase text-primary">
+          #DreamlandLIFE
+        </h2>
+        <p>
         Follow our vibrant community on Instagram{' '}
         <a
           href="https://www.instagram.com/dreamland_brampton"
@@ -45,7 +49,9 @@ const InstagramFeed = () => {
           Follow Us
         </a>
       </div>
-
+      <div className="min-h-20 bg-none flex justify-center">
+            <SocialButtons />
+        </div>
     </section>
   );
 };

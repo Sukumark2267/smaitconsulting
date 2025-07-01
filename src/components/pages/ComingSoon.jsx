@@ -17,7 +17,7 @@ import Link from "next/link";
 import SplitType from 'split-type';
 import gsap from 'gsap';
 import InstagramFeed from "../instagram";
-
+import FounderSocials from "../FounderSocials";
 
 const newsletterSchema = z.object({
   fname: z.string().min(1, "Name is required"),
@@ -265,8 +265,8 @@ export default function ComingSoon() {
                 >
                   About Dreamland Athletics
                 </Badge> */}
-                <h2 className="text-6xl md:text-8xl lg:text-8xl mb-5 uppercase text-primary">
-                  Services We Offer
+                <h2 className="text-6xl md:text-8xl lg:text-8xl border border-black border-solid mb-5 uppercase px-2 py-1 text-primary">
+                  What Sets us apart
                 </h2>
                 <p className="text-2xl md:text-2x1 text-gray-300 max-w-3xl mx-auto leading-relaxed">
                   At Dreamland Athletics, we offer variety of services ranging from fitness and wellness to nutrition and lifestyle coaching.
@@ -485,6 +485,7 @@ export default function ComingSoon() {
               </div>
             </div>
           </section> */}
+      <InstagramFeed/>
 
           {/* Newsletter Section */}
           <section id="Newsletter" className="Newsletter py-16 px-4 rounded-xl flex items-center">
@@ -544,8 +545,8 @@ export default function ComingSoon() {
         </div>
       </div>
 
-      <InstagramFeed/>
-      
+      <FounderSocials/>
+
       {/* Footer */}
       <footer className="relative py-16 px-4 bg-gray-900 border-t border-gray-800">
         <div className="max-w-7xl mx-auto text-center">
