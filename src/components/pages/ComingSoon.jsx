@@ -555,7 +555,7 @@ export default function ComingSoon() {
               className="w-50 h-auto mx-auto mb-6"
             />
           </div>
-          <h3 className="text-3xl font-bold mb-4 text-primary">
+          <h3 className="text-6xl tracking-wide mb-4 text-primary">
             Dreamland Athletics
           </h3>
           <p className="text-gray-400 mb-8 max-w-2xl mx-auto">

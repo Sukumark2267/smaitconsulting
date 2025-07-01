@@ -99,6 +99,10 @@ header {
   overflow-x: hidden !important;
 }
 
+h3 {
+  font-family: 'AlternateGothicNo1';
+}
+
 .logo {
   display: flex;
   align-items: center;
