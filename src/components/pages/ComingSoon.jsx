@@ -157,9 +157,9 @@ export default function ComingSoon() {
           <Image
             src="/images/logo/logo-primary.png"
             alt="Dreamland Athletics Gym"
-            width={256}
-            height={256}
-            className="w-32 md:w-48 lg:w-44 h-auto object-contain rounded-xl"
+            width={250}
+            height={250}
+            className="w-30 md:w-35 lg:w-40 h-auto object-contain rounded-xl"
             priority
           />
           <h2
@@ -178,7 +178,7 @@ export default function ComingSoon() {
         </Badge> */}
 
           <h1
-            className="text-[6rem] md:text-[10rem] xl:text-[14rem] 2xl:text-[15rem] m-0 leading-tight text-white relative md:h-40 sm:h-10 lg:h-42 xl:h-55 before:content-[''] before:block before:w-[110%] before:h-[2px] before:bg-primary before:absolute before:top-0 before:left-1/2 before:-translate-x-1/2"
+            className="text-[6rem] md:text-[8rem] xl:text-[12rem] 2xl:text-[15rem] m-0 leading-tight text-white relative h-25 md:h-35 xl:h-55 before:content-[''] before:block before:w-[110%] before:h-[2px] before:bg-primary before:absolute before:top-0 before:left-1/2 before:-translate-x-1/2"
             style={{
               fontFamily: "AlternateGothicNo1",
               textShadow: "0 0 20px rgba(0,0,0,0.8)",
@@ -188,7 +188,7 @@ export default function ComingSoon() {
             BE A TURTLE
           </h1>
 
-          <p className="text-xl md:text-[2.05rem] lg:text-[2.15rem] xl:text-[3rem] mb-8 leading-relaxed text-white">
+          <p className="text-[1.35rem] md:text-[1.75rem] xl:text-[3rem] mb-6 leading-relaxed text-white">
             SLOW<span className="text-[#e7b826]">.</span>STEADY
             <span className="text-[#e7b826]">.</span>UNSTOPPABLE
             <span className="text-[#e7b826]">.</span>
@@ -197,14 +197,12 @@ export default function ComingSoon() {
           Your journey to greatness starts here. Join the elite community of
           athletes who dare to dream big and work harder.
         </p> */}
-          <div className="">
-            <Link
-              href="#Newsletter"
-              className="btn--primary bg-primary hover:bg-primary/90 text-white font-bold py-5 px-10 rounded-lg transition duration-300 text-md"
-            >
-              LET'S GO !!
-            </Link>
-          </div>
+          <Link
+            href="#Newsletter"
+            className="btn--primary bg-primary hover:bg-primary/90 text-white font-bold py-2.5 px-8 md:py-3.5 md:px-10 rounded-lg transition duration-300 !text-sm md:!text-md"
+          >
+            LET'S GO !!
+          </Link>
         </div>
 
         {/* Dark Overlay */}
@@ -579,7 +577,7 @@ export default function ComingSoon() {
               className="w-50 h-auto mx-auto mb-2"
             />
           </div>
-          <h3 className="text-4xl tracking-wide mb-4 text-white">
+          <h3 className="text-4xl tracking-wide mb-4 text-white uppercase">
             Dreamland Athletics
           </h3>
           <p className="text-gray-400 mb-8 max-w-2xl lg:text-xl md:text-lg mx-auto">
