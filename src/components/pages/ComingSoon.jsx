@@ -14,71 +14,16 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
-import SplitType from 'split-type';
-import gsap from 'gsap';
+import SplitType from "split-type";
+import gsap from "gsap";
 import InstagramFeed from "../instagram";
 import FounderSocials from "../FounderSocials";
+import { thumbnails } from "@/data/thumbs";
 
 const newsletterSchema = z.object({
   fname: z.string().min(1, "Name is required"),
   email: z.string().email("Invalid email"),
 });
-
-
-const thumbnails = [
-  "images/bg-slideshow/2.webp",
-  "images/bg-slideshow/1.webp",
-  "images/bg-slideshow/3.webp",
-  "images/bg-slideshow/4.webp",
-  "images/bg-slideshow/5.webp",
-  "images/bg-slideshow/6.webp",
-  "images/bg-slideshow/7.webp",
-  "images/bg-slideshow/8.webp",
-  "images/bg-slideshow/9.webp",
-  "images/bg-slideshow/10.webp",
-  "images/bg-slideshow/11.webp",
-  "images/bg-slideshow/12.webp",
-  "images/bg-slideshow/13.webp",
-  "images/bg-slideshow/14.webp",
-  "images/bg-slideshow/15.webp",
-  "images/bg-slideshow/16.webp",
-  "images/bg-slideshow/17.webp",
-  "images/bg-slideshow/18.webp",
-  "images/bg-slideshow/19.webp",
-  "images/bg-slideshow/20.webp",
-  "images/bg-slideshow/21.webp",
-  "images/bg-slideshow/22.webp",
-  "images/bg-slideshow/23.webp",
-  "images/bg-slideshow/24.webp",
-  "images/bg-slideshow/25.webp",
-  "images/bg-slideshow/26.webp",
-  "images/bg-slideshow/27.webp",
-  "images/bg-slideshow/28.webp",
-  "images/bg-slideshow/29.webp",
-  "images/bg-slideshow/30.webp",
-  "images/bg-slideshow/31.webp",
-  "images/bg-slideshow/32.webp",
-  "images/bg-slideshow/33.webp",
-  "images/bg-slideshow/34.webp",
-  "images/bg-slideshow/35.webp",
-  "images/bg-slideshow/36.webp",
-  "images/bg-slideshow/37.webp",
-  "images/bg-slideshow/38.webp",
-  "images/bg-slideshow/39.webp",
-  "images/bg-slideshow/40.webp",
-  "images/bg-slideshow/41.webp",
-  "images/bg-slideshow/42.webp",
-  "images/bg-slideshow/43.webp",
-  "images/bg-slideshow/44.webp",
-  "images/bg-slideshow/45.webp",
-  "images/bg-slideshow/46.webp",
-  "images/bg-slideshow/47.webp",
-  "images/bg-slideshow/48.webp",
-  "images/bg-slideshow/49.webp",
-  "images/bg-slideshow/50.webp",
-  "images/bg-slideshow/51.webp",
-  "images/bg-slideshow/52.webp",
-];
 
 const scrollingImages = [...thumbnails, ...thumbnails];
 
@@ -91,11 +36,33 @@ const shuffle = (array) => {
   return shuffled;
 };
 
-
 export default function ComingSoon() {
   const headingRef = useRef(null);
   let [loading, setLoading] = useState(false);
   const [form, setForm] = useState({ fname: "", email: "" });
+  const [rowCount, setRowCount] = useState(6); // Default to desktop
+
+  // Hook to handle responsive row count
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        // Mobile: 9-10 rows (using 10)
+        setRowCount(10);
+      } else {
+        // Desktop: 6 rows
+        setRowCount(6);
+      }
+    };
+
+    // Set initial value
+    handleResize();
+
+    // Add event listener
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -153,94 +120,96 @@ export default function ComingSoon() {
   //   return () => split.revert();
   // }, []);
 
-
   return (
     <div className="landing-page min-h-screen bg-black text-white">
       {/* Hero Section with Video */}
       <section className="relative h-screen overflow-hidden">
-      {/* Background Collage */}
-      <div className="absolute inset-0 z-0 flex flex-col space-y-1 overflow-hidden">
-      {[...Array(6)].map((_, rowIndex) => {
-        // Shuffle + double the array to ensure smooth looping
-        const rowImages = [...shuffle(thumbnails), ...shuffle(thumbnails)];
+        {/* Background Collage */}
+        <div className="absolute inset-0 z-0 flex flex-col space-y-1 overflow-hidden">
+          {[...Array(rowCount)].map((_, rowIndex) => {
+            // Shuffle + double the array to ensure smooth looping
+            const rowImages = [...shuffle(thumbnails), ...shuffle(thumbnails)];
 
-        return (
-          <div
-            key={rowIndex}
-            className={`flex whitespace-nowrap ${
-              rowIndex % 2 === 0 ? "animate-scroll-ltr" : "animate-scroll-rtl"
-            }`}
+            return (
+              <div
+                key={rowIndex}
+                className={`flex whitespace-nowrap ${
+                  rowIndex % 2 === 0
+                    ? "animate-scroll-ltr"
+                    : "animate-scroll-rtl"
+                }`}
+              >
+                {rowImages.map((src, idx) => (
+                  <img
+                    key={`${rowIndex}-${idx}`}
+                    src={src}
+                    alt={`Thumb ${idx}`}
+                    className="aspect-[2/1] w-40 md:w-60 xl:w-80 object-cover mx-[2px] rounded"
+                  />
+                ))}
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Hero Content */}
+        <div className="container mx-auto relative z-[25] flex flex-col justify-center items-center h-full px-4 text-center">
+          <Image
+            src="/images/logo/logo-primary.png"
+            alt="Dreamland Athletics Gym"
+            width={256}
+            height={256}
+            className="w-32 md:w-48 lg:w-44 h-auto object-contain rounded-xl"
+            priority
+          />
+          <h2
+            className="text-3xl md:text-md lg:text-4xl font-bold pt-2 pb-10 leading-tight text-white"
+            style={{
+              fontFamily: "Swiss721Black",
+              textShadow: "0 0 20px rgba(0,0,0,0.8)",
+              letterSpacing: "2px",
+            }}
           >
-            {rowImages.map((src, idx) => (
-              <img
-                key={`${rowIndex}-${idx}`}
-                src={src}
-                alt={`Thumb ${idx}`}
-                className="w-40 h-20 md:w-80 md:h-40 object-cover m-[1px] rounded"
-              />
-            ))}
-          </div>
-        );
-      })}
-    </div>
-      {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/60 z-10" />
+            DREAMLAND <br /> ATHLETICS
+          </h2>
 
-      {/* Hero Content */}
-      <div className="relative z-20 flex flex-col justify-start items-center h-full px-4 mt-20 text-center">
-        <Image
-          src="/images/logo/logo-primary.png"
-          alt="Dreamland Athletics Gym"
-          width={256}
-          height={256}
-          className="w-32 md:w-48 lg:w-44 h-auto object-contain rounded-xl"
-          priority
-        />
-        <h1 id="Hero-Heading"
-              ref={headingRef}
-          className="text-3xl md:text-md lg:text-4xl font-bold lg:px-100 md:px-50 px-15 pt-2 pb-10 leading-tight text-white border-b-2 border-primary"
-          style={{
-            fontFamily: "Swiss721Black",
-            textShadow: "0 0 20px rgba(0,0,0,0.8)",
-            letterSpacing: "2px",
-          }}
-        >
-          DREAMLAND <br/> ATHLETICS
-        </h1>
-
-        {/* <Badge variant="outline" className="mb-6 text-primary border-primary">
+          {/* <Badge variant="outline" className="mb-6 text-primary border-primary">
           Premium Fitness Experience
         </Badge> */}
 
-          <h1 id="Hero-Heading"
-          ref={headingRef}
-          className="text-[6rem] md:text-[10rem] lg:text-[15rem] m-0 leading-tight text-white md:h-40 sm:h-10 lg:h-57"
-          style={{
-            fontFamily: "AlternateGothicNo1",
-            textShadow: "0 0 20px rgba(0,0,0,0.8)",
-            letterSpacing: "2px",
-          }}
-        >
-          BE A TURTLE
-        </h1>
+          <h1
+            className="text-[6rem] md:text-[10rem] xl:text-[14rem] 2xl:text-[15rem] m-0 leading-tight text-white relative md:h-40 sm:h-10 lg:h-42 xl:h-55 before:content-[''] before:block before:w-[110%] before:h-[2px] before:bg-primary before:absolute before:top-0 before:left-1/2 before:-translate-x-1/2"
+            style={{
+              fontFamily: "AlternateGothicNo1",
+              textShadow: "0 0 20px rgba(0,0,0,0.8)",
+              letterSpacing: "2px",
+            }}
+          >
+            BE A TURTLE
+          </h1>
 
-        <p className="text-xl md:text-[2.05rem] lg:text-[3rem] mb-8 leading-relaxed text-white">
-          SLOW<span className="text-[#e7b826]">.</span>STEADY<span className="text-[#e7b826]">.</span>UNSTOPPABLE<span className="text-[#e7b826]">.</span>
-        </p>
-{/*       <p className="text-base md:text-xl mb-12 max-w-3xl text-gray-300 leading-relaxed">
+          <p className="text-xl md:text-[2.05rem] lg:text-[2.15rem] xl:text-[3rem] mb-8 leading-relaxed text-white">
+            SLOW<span className="text-[#e7b826]">.</span>STEADY
+            <span className="text-[#e7b826]">.</span>UNSTOPPABLE
+            <span className="text-[#e7b826]">.</span>
+          </p>
+          {/*       <p className="text-base md:text-xl mb-12 max-w-3xl text-gray-300 leading-relaxed">
           Your journey to greatness starts here. Join the elite community of
           athletes who dare to dream big and work harder.
         </p> */}
-        <div className="lg:m-15 md:m-30">
-        <Link
-          href="#Newsletter"
-          className="btn--primary bg-primary hover:bg-primary/90 text-white font-bold py-5 px-10 rounded-lg transition duration-300 text-md"
-        >
-          LET'S GO !!
-        </Link>
+          <div className="">
+            <Link
+              href="#Newsletter"
+              className="btn--primary bg-primary hover:bg-primary/90 text-white font-bold py-5 px-10 rounded-lg transition duration-300 text-md"
+            >
+              LET'S GO !!
+            </Link>
+          </div>
         </div>
-      </div>
-    </section>
+
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-black/60 z-[20]" />
+      </section>
 
       {/* Main content */}
       <div className="relative">
@@ -269,77 +238,110 @@ export default function ComingSoon() {
                   What Sets us apart
                 </h2>
                 <p className="text-2xl md:text-2x1 text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                  At Dreamland Athletics, we offer variety of services ranging from fitness and wellness to nutrition and lifestyle coaching.
+                  At Dreamland Athletics, we offer variety of services ranging
+                  from fitness and wellness to nutrition and lifestyle coaching.
                 </p>
               </div>
 
               <div className="w-full grid grid-cols lg:grid-cols-5 md:grid-cols-1 gap-20 md:px-55 px-20 lg:px-0">
-              <div>
-                  <Card className="bg-white/10 md:bg-white/5 md:hover:bg-white/10 border-primary/20 hover:border-primary transition-all duration-300">
-                    <CardHeader className="text-center">
-                      <Image src="/images/elements/DLICONS/icon_dl-01.png" alt="Gym Facilities" width={100} height={100} className="rounded-2xl shadow-2xl mx-auto transition-shadow duration-300 object-cover lg:aspect-[1/1]" />
-                      <CardTitle className="text-white">
-                      </CardTitle>
-                    </CardHeader>
-                  </Card>
-                  <h1 className="text-white text-center text-2xl pt-5 uppercase">One-on-One <br/> Training</h1>
-
-                </div>
-                
                 <div>
                   <Card className="bg-white/10 md:bg-white/5 md:hover:bg-white/10 border-primary/20 hover:border-primary transition-all duration-300">
                     <CardHeader className="text-center">
-                      <Image src="/images/elements/DLICONS/icon_dl-02.png" alt="Gym Facilities" width={100} height={100} className="rounded-2xl shadow-2xl mx-auto transition-shadow duration-300 object-cover lg:aspect-[1/1]" />
-                      <CardTitle className="text-white">
-                      </CardTitle>
+                      <Image
+                        src="/images/elements/DLICONS/icon_dl-01.png"
+                        alt="Gym Facilities"
+                        width={100}
+                        height={100}
+                        className="rounded-2xl shadow-2xl mx-auto transition-shadow duration-300 object-cover lg:aspect-[1/1]"
+                      />
+                      <CardTitle className="text-white"></CardTitle>
                     </CardHeader>
                   </Card>
-                  <h1 className="text-white text-center text-2xl pt-5 uppercase">Group <br/> Fitness</h1>
-                </div>
-                
-                <div>
-                  <Card className="bg-white/10 md:bg-white/5 md:hover:bg-white/10 border-primary/20 hover:border-primary transition-all duration-300">
-                    <CardHeader className="text-center">
-                      <Image src="/images/elements/DLICONS/icon_dl-03.png" alt="Gym Facilities" width={100} height={100} className="rounded-2xl shadow-2xl mx-auto transition-shadow duration-300 object-cover lg:aspect-[1/1]" />
-                      <CardTitle className="text-white"> 
-                      </CardTitle>
-                    </CardHeader>
-                  </Card>
-                  <h1 className="text-white text-center text-2xl pt-5 uppercase">HIIT <br/> Class</h1>
-                </div>
-                
-                <div>
-                  <Card className="bg-white/10 md:bg-white/5 md:hover:bg-white/10 border-primary/20 hover:border-primary transition-all duration-300">
-                    <CardHeader className="text-center">
-                      <Image src="/images/elements/DLICONS/icon_dl-04.png" alt="Gym Facilities" width={100} height={100} className="rounded-2xl shadow-2xl mx-auto transition-shadow duration-300 object-cover lg:aspect-[1/1]" />
-                      <CardTitle className="text-white">
-                      </CardTitle>
-                    </CardHeader>
-                  </Card>
-                  <h1 className="text-white text-center text-2xl pt-5 uppercase">Kids <br/> Workshop</h1>
-
+                  <h1 className="text-white text-center text-2xl pt-5 uppercase">
+                    One-on-One <br /> Training
+                  </h1>
                 </div>
 
                 <div>
                   <Card className="bg-white/10 md:bg-white/5 md:hover:bg-white/10 border-primary/20 hover:border-primary transition-all duration-300">
                     <CardHeader className="text-center">
-                      <Image src="/images/elements/DLICONS/icon_dl-05.png" alt="Gym Facilities" width={100} height={100} className="rounded-2xl shadow-2xl mx-auto transition-shadow duration-300 object-cover lg:aspect-[1/1]" />
-                      <CardTitle className="text-white">
-                      </CardTitle>
+                      <Image
+                        src="/images/elements/DLICONS/icon_dl-02.png"
+                        alt="Gym Facilities"
+                        width={100}
+                        height={100}
+                        className="rounded-2xl shadow-2xl mx-auto transition-shadow duration-300 object-cover lg:aspect-[1/1]"
+                      />
+                      <CardTitle className="text-white"></CardTitle>
                     </CardHeader>
                   </Card>
-                  <h1 className="text-white text-center text-2xl pt-5 uppercase">3D STYKU <br/> Body Scan</h1>
+                  <h1 className="text-white text-center text-2xl pt-5 uppercase">
+                    Group <br /> Fitness
+                  </h1>
+                </div>
 
+                <div>
+                  <Card className="bg-white/10 md:bg-white/5 md:hover:bg-white/10 border-primary/20 hover:border-primary transition-all duration-300">
+                    <CardHeader className="text-center">
+                      <Image
+                        src="/images/elements/DLICONS/icon_dl-03.png"
+                        alt="Gym Facilities"
+                        width={100}
+                        height={100}
+                        className="rounded-2xl shadow-2xl mx-auto transition-shadow duration-300 object-cover lg:aspect-[1/1]"
+                      />
+                      <CardTitle className="text-white"></CardTitle>
+                    </CardHeader>
+                  </Card>
+                  <h1 className="text-white text-center text-2xl pt-5 uppercase">
+                    HIIT <br /> Class
+                  </h1>
+                </div>
+
+                <div>
+                  <Card className="bg-white/10 md:bg-white/5 md:hover:bg-white/10 border-primary/20 hover:border-primary transition-all duration-300">
+                    <CardHeader className="text-center">
+                      <Image
+                        src="/images/elements/DLICONS/icon_dl-04.png"
+                        alt="Gym Facilities"
+                        width={100}
+                        height={100}
+                        className="rounded-2xl shadow-2xl mx-auto transition-shadow duration-300 object-cover lg:aspect-[1/1]"
+                      />
+                      <CardTitle className="text-white"></CardTitle>
+                    </CardHeader>
+                  </Card>
+                  <h1 className="text-white text-center text-2xl pt-5 uppercase">
+                    Kids <br /> Workshop
+                  </h1>
+                </div>
+
+                <div>
+                  <Card className="bg-white/10 md:bg-white/5 md:hover:bg-white/10 border-primary/20 hover:border-primary transition-all duration-300">
+                    <CardHeader className="text-center">
+                      <Image
+                        src="/images/elements/DLICONS/icon_dl-05.png"
+                        alt="Gym Facilities"
+                        width={100}
+                        height={100}
+                        className="rounded-2xl shadow-2xl mx-auto transition-shadow duration-300 object-cover lg:aspect-[1/1]"
+                      />
+                      <CardTitle className="text-white"></CardTitle>
+                    </CardHeader>
+                  </Card>
+                  <h1 className="text-white text-center text-2xl pt-5 uppercase">
+                    3D STYKU <br /> Body Scan
+                  </h1>
                 </div>
               </div>
             </div>
           </section>
 
           {/* Features Section */}
-          <section className="py-16 px-10 md:px-10 lg:px-40 rounded-xl items-center ">
+          <section className="py-16 px-10 md:px-10 lg:px-40 mb-5 rounded-xl items-center">
             <div className="mx-auto">
               <div className="flex flex-col gap-12 justify-center h-full">
-                  <section id="contact">
+                <div id="contact">
                   {/* <h2 className="section-title text-3xl font-bold text-center mb-10">GET IN TOUCH</h2> */}
 
                   <div className="flex flex-col md:flex-row lg:flex-row gap-20 items-start justify-center">
@@ -347,45 +349,65 @@ export default function ComingSoon() {
                     <div className="flex-2 space-y-6">
                       <div className="contact-info">
                         <h4 className="bold text-3xl">LOCATION</h4>
-                        <p className="text-lg font-light">860 N Park Dr, Brampton, ON L6S 4N5, Canada</p>
+                        <p className="text-lg font-light">
+                          860 N Park Dr, Brampton, ON L6S 4N5, Canada
+                        </p>
                       </div>
 
                       <div className="contact-info">
                         <h4 className="text-3xl">HOURS</h4>
-                        <p className="text-lg font-light">Monday–Friday: 5am – 10pm</p>
-                        <p className="text-lg font-light">Saturday–Sunday: 7am – 8pm</p>
+                        <p className="text-lg font-light">
+                          Monday–Friday: 5am – 10pm
+                        </p>
+                        <p className="text-lg font-light">
+                          Saturday–Sunday: 7am – 8pm
+                        </p>
                       </div>
 
                       <div className="contact-info">
                         <h4 className="text-3xl">CONTACT</h4>
-                        <a className="block text-lg text-blue-600 hover:underline font-light" href="tel:+19055551234">(905) 555-1234</a>
+                        <a
+                          className="block text-lg text-blue-600 hover:underline font-light"
+                          href="tel:+19055551234"
+                        >
+                          (905) 555-1234
+                        </a>
                         {/* <a className="block text-lg text-blue-600 hover:underline font-light" href="https://www.instagram.com/dreamland_brampton" target="_blank" rel="noopener noreferrer">
                           @dreamland_brampton
                         </a> */}
-                        <a className="block text-lg text-blue-600 hover:underline font-light" href="mailto:jay@dreamlandathletics.com">jay@dreamlandathletics.com</a>
-                        <a className="block text-lg text-blue-600 hover:underline font-light" href="mailto:chirag@dreamlandathletics.com">chirag@dreamlandathletics.com</a>
+                        <a
+                          className="block text-lg text-blue-600 hover:underline font-light"
+                          href="mailto:jay@dreamlandathletics.com"
+                        >
+                          jay@dreamlandathletics.com
+                        </a>
+                        <a
+                          className="block text-lg text-blue-600 hover:underline font-light"
+                          href="mailto:chirag@dreamlandathletics.com"
+                        >
+                          chirag@dreamlandathletics.com
+                        </a>
                       </div>
                     </div>
 
                     {/* Contact Image */}
                     <div className="flex-4">
-                    <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d720.7687165970583!2d-79.74951353497413!3d43.72977157442773!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b173a1b0a0e17%3A0xdadb9bd5d608dd4e!2sDreamland%20Athletics!5e0!3m2!1sen!2sin!4v1747585502192!5m2!1sen!2sin"
-                            width="100%"
-                            height="450"
-                            allowFullScreen
-                            loading="lazy"
-                            style={{ border: 1 }}
-                            className="rounded-lg"
-                            referrerPolicy="no-referrer-when-downgrade"
-                          ></iframe>
+                      <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d720.7687165970583!2d-79.74951353497413!3d43.72977157442773!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b173a1b0a0e17%3A0xdadb9bd5d608dd4e!2sDreamland%20Athletics!5e0!3m2!1sen!2sin!4v1747585502192!5m2!1sen!2sin"
+                        width="100%"
+                        height="450"
+                        allowFullScreen
+                        loading="lazy"
+                        style={{ border: 1 }}
+                        className="rounded-lg"
+                        referrerPolicy="no-referrer-when-downgrade"
+                      ></iframe>
                     </div>
-                    </div>
-                    </section>
-                    </div>
-                    </div>
-                    </section>
-
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
 
           {/* Testimonials Section */}
           {/* <section className="py-16 px-4 rounded-xl flex items-center my-5">
@@ -480,10 +502,13 @@ export default function ComingSoon() {
               </div>
             </div>
           </section> */}
-      <InstagramFeed/>
+          <InstagramFeed />
 
           {/* Newsletter Section */}
-          <section id="Newsletter" className="Newsletter py-16 px-4 rounded-xl flex items-center">
+          <section
+            id="Newsletter"
+            className="Newsletter py-16 px-4 mb-5 rounded-xl flex items-center"
+          >
             <div className="max-w-4xl mx-auto text-center">
               {/* <Badge
                 variant="outline"
@@ -537,10 +562,10 @@ export default function ComingSoon() {
               </Card>
             </div>
           </section>
+
+          <FounderSocials />
         </div>
       </div>
-
-      <FounderSocials/>
 
       {/* Footer */}
       <footer className="relative py-16 px-4 bg-gray-900 border-t border-gray-800">
