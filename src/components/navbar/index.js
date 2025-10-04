@@ -5,19 +5,31 @@ import "./navbar.css";
 export default function Navbar() {
   return (
     <header className="fixed w-full bg-white z-50 transition-shadow duration-300">
-      <div className="logo px-15">
+      <div className="logo px-15 z-99">
         {/* <Image src="https://via.placeholder.com/50x50" alt="Dreamland Athletics Logo" width={100} height={100} /> */}
         <Link href="/">
           <Image
-            src="/images/logo/dl_white_empty_primary.png"
+            src="/images/logo/dl_white_empty_primary - text.png"
             alt="Logo"
             width={200}
             height={200}
-            className="scale-150"
+            className="scale-110"
           />
         </Link>{" "}
       </div>
-      <div className="right-section px-10">
+      <div className="logo z-1">
+        {/* <Image src="https://via.placeholder.com/50x50" alt="Dreamland Athletics Logo" width={100} height={100} /> */}
+        <Link href="/">
+          <Image
+            src="/images/logo/logo-primary.png"
+            alt="Logo"
+            width={1000}
+            height={1000}
+            className="w-18 scale-2000 pt-1"
+          />
+        </Link>{" "}
+      </div>
+      <div className="right-section z-99 px-10">
         <button className="mobile-menu-btn" id="mobileMenuBtn">
           <i className="fas fa-bars"></i>
         </button>
