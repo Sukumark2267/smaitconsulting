@@ -1,90 +1,112 @@
 'use client';
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const sessions = [
-    { title: 'BRONZE', description: '12 GROUP FITNESS SESSION', price: '$280' },
-    { title: 'SILVER', description: '16 GROUP FITNESS SESSION', price: '$320' },
-    { title: 'GOLD', description: 'UNLIMITED GROUP FITNESS SESSION', price: '$350' },
-  ];
-  
+const session = {
+  title: 'BRONZE',
+  descriptions: [
+    '12 professionally guided group fitness sessions designed to build endurance, strength, and flexibility.',
+    'Led by certified trainers focused on personalized attention and correct form.',
+    'Flexible scheduling options to fit your lifestyle and weekly routine.',
+    'Exclusive access to our community fitness challenges and wellness events.',
+  ],
+  price: '$175',
+  image: '/images/elements/477395712_17845184157410936_8145847497434619736_n.jpg',
+};
 
 export default function GroupService() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-useEffect(() => {
-  gsap.fromTo(
-    ".grid-item",
-    {
-      opacity: 0,
-      y: 30,
-      scale: 0.9,
-    },
-    {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      duration: 0.6,
-      ease: "power3.out",
-      stagger: 0.1,
-      scrollTrigger: {
-        trigger: ".grid",
-        start: "top 80%",
-        toggleActions: "restart none none none",
-      },
-    }
-  );
-
-  // Optional: Clean up scroll triggers on unmount
-  return () => {
-    ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-  };
-}, []);
-
-
-  const handleClick = () => {
-    const nextIndex = (currentIndex + 1) % aboutcontent.length;
-    setCurrentIndex(nextIndex);
+  useEffect(() => {
+    gsap.fromTo(
+      ".service-content",
+      { opacity: 0, y: 40 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: ".service-content",
+          start: "top 80%",
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
 
     gsap.fromTo(
-      ".grid",
-      { opacity: 0, y: 20 },
-      { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }
+      ".service-image",
+      { opacity: 0, x: 50 },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 1,
+        delay: 0.2,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: ".service-image",
+          start: "top 80%",
+          toggleActions: "play none none reverse",
+        },
+      }
     );
-  };
 
- 
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
+  }, []);
+
   return (
-    <>
-      <div className="group-service bg-[#e7b826] text-center text-[#000] text-3xl font-bold p-2">
-        <h1>Group Service</h1>
+    <section className="group-service bg-black text-white py-16">
+      <div className="text-center mb-12">
+        <h1 className="text-4xl font-bold text-[#e7b826]">Group Service</h1>
+        <p className="text-gray-300 mt-3 text-base max-w-2xl mx-auto">
+          A plan that fits your goals. Our Bronze Membership gives you access to
+          expert-led group sessions and a vibrant community atmosphere.
+        </p>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto p-4 pt-8 pr-8">
-      {sessions.map((session, index) => (
-        <div
-          key={index}
-          className="grid-item bg-black text-white rounded-lg shadow-lg overflow-hidden border border-[#ffd700]"
-        >
-          <div className="bg-[#ffd700] text-black font-bold text-center py-2 text-md">
-          <h1>{session.title}</h1>
-          </div>
-          <div className="flex flex-col items-center justify-center py-6 space-y-2">
-            <div className="text-white text-center text-sm tracking-wide">
-              ✦ {session.description}<br/>
-              ✦ {session.description}<br/>
-              ✦ {session.description}<br/>
-            </div>
-            <button className="mt-2 bg-[#ffd700] text-black px-4 py-2 rounded-md font-semibold border-2 border-transparent hover:cursor-pointer hover:bg-black hover:text-[#ffd700] hover:border-2 hover:border-[#ffd700] transition duration-300">
-            {session.price}
+
+      <div className="flex flex-col md:flex-row items-center justify-between max-w-6xl mx-auto px-6 md:px-12 gap-8">
+        {/* LEFT SIDE: TEXT */}
+        <div className="service-content flex-1 space-y-6">
+          <h2 className="text-3xl text-[#ffd700]">{session.title} MEMBERSHIP</h2>
+
+          <ul className="space-y-3 text-gray-300 leading-relaxed text-[1rem]">
+            {session.descriptions.map((desc, i) => (
+              <li key={i} className="flex items-start gap-2">
+                <span className="text-[#ffd700] text-lg mt-1">✦</span>
+                <p>{desc}</p>
+              </li>
+            ))}
+          </ul>
+
+          <div className="flex items-center gap-6 pt-4">
+          <Link href="/contact">
+
+            <button className="bg-[#ffd700] text-black font-semibold px-6 py-2 rounded-md border-2 border-transparent hover:bg-transparent hover:text-[#ffd700] hover:border-[#ffd700] cursor-pointer transition duration-300">
+              Join Now
             </button>
+            </Link>
+
+            <span className="text-2xl font-bold text-[#ffd700]">{session.price}</span>
           </div>
         </div>
-      ))}
-    </div>
-    </>
-  ); 
+
+        {/* RIGHT SIDE: IMAGE */}
+        <div className="service-image flex-1">
+          <div className="relative w-full h-[350px] md:h-[420px] rounded-xl overflow-hidden border-2 border-[#ffd700] shadow-lg">
+            <Image
+              src={session.image}
+              alt={`${session.title} Membership`}
+              fill
+              className="object-cover"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }
-  

@@ -17,7 +17,7 @@ const programsData = [
       'Real-time form correction',
       'Goal-specific planning',
       'Progress accountability',
-      'Price: $70/hour',
+      'Price: $40/session',
     ],
     image: '/images/elements/A.png',
   },
