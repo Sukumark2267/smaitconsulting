@@ -6,7 +6,7 @@ import Navbar from '@/components/navbar';
 import Footer from '@/components/footer';
 import AboutCards from '@/components/AboutCards';
 import AboutSection2 from '@/components/AboutSection2';
-import ContactSection from '@/components/contact';
+import Newsletter from '@/components/Newsletter';
 import Preloader from '@/components/Preloader';
 import { TextHoverEffect } from "@/components/ui/text-hover-effect";
 
@@ -37,7 +37,7 @@ export default function About() {
          </div>
          {/* <AboutCards />    */}
          <AboutSection2 />
-         <ContactSection />
+         <Newsletter />
          <Footer />
           </section>
     </>

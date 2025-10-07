@@ -44,7 +44,7 @@ export default function Home() {
       <MembershipSection/>
       <Services/>
       <FounderSocials/>
-      <ContactSection/>
+      <Newsletter/>
       <Banner/>
       <Footer />
 

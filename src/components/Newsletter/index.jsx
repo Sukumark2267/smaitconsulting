@@ -79,7 +79,7 @@ export default function Newsletter() {
 
             <button
               type="submit"
-              className="btn--primary transition-all duration-300 px-5 pb-3 pt-4"
+              className="btn--primary transition-all duration-300 px-6 pb-4 pt-5"
               disabled={loading}
             >
               {loading ? (

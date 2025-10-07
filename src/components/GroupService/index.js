@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 const session = {
   title: 'BRONZE',
   descriptions: [
-    '12 professionally guided group fitness sessions designed to build endurance, strength, and flexibility.',
+    'Professionally guided group fitness sessions designed to build endurance, strength, and flexibility.',
     'Led by certified trainers focused on personalized attention and correct form.',
     'Flexible scheduling options to fit your lifestyle and weekly routine.',
     'Exclusive access to our community fitness challenges and wellness events.',
@@ -84,7 +84,7 @@ export default function GroupService() {
           </ul>
 
           <div className="flex items-center gap-6 pt-4">
-          <Link href="/contact">
+          <Link href="/ContactUs">
 
             <button className="bg-[#ffd700] text-black font-semibold px-6 py-2 rounded-md border-2 border-transparent hover:bg-transparent hover:text-[#ffd700] hover:border-[#ffd700] cursor-pointer transition duration-300">
               Join Now
