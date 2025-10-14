@@ -21,7 +21,7 @@ export default function ImageCarousel() {
 
   return (
     <>
-      <h2 className="text-2xl md:text-5xl pt-7 text-center">
+      <h2 className="text-2xl md:text-5xl pt-12 text-center">
         <span className="text-white font-medium">GALLERY</span>
       </h2>
       <div className="relative flex items-center justify-center w-full overflow-hidden h-screen">
@@ -34,7 +34,7 @@ export default function ImageCarousel() {
         </button>
 
         {/* Carousel */}
-        <div className="relative flex items-center justify-center w-full max-w-6xl">
+        <div className="relative flex items-center justify-center w-full max-w-7xl">
           {images.map((img, index) => {
             const offset = (index - current + images.length) % images.length;
             let translateX = 0;
