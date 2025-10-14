@@ -10,9 +10,9 @@ export function customerNewsletterTemplate({ fname }) {
   return {
     subject: "Thank you for signing up!",
     text: `Hi ${fname},\n\nThank you for signing up for the Dreamland Athletics newsletter! We'll keep you updated.`,
-    html: `<div style="font-family: Arial, sans-serif; max-width: 600px; margin: 30px auto; background-color: #ffffff; border-radius: 10px; overflow: hidden; border: 1px solid #e5e5e5; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-  <div style="background-color: #000; text-align: center; padding: 10px;">
-    <img src="https://res.cloudinary.com/dzhgubztu/image/upload/v1760467027/dl_white_empty_primary_bofism.png" alt="Dreamland Athletics" style="max-width: 160px; height: auto;" />
+    html: `    <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 30px auto; background-color: #ffffff; border-radius: 10px; overflow: hidden; border: 1px solid #e5e5e5; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+  <div style="background-color: #000; text-align: center; padding: 20px;">
+    <img src="https://res.cloudinary.com/dzhgubztu/image/upload/v1760467027/dl_white_empty_primary_bofism.png" alt="Dreamland Athletics" style="max-width: 300px; height: auto;" />
   </div>
 
   <div style="background-color: #f1c419; text-align: center; padding: 20px;">
@@ -45,10 +45,11 @@ export function contactTemplate({ fname, email, phone, message }) {
     subject: "We have recieved your request",
     text: `Name: ${fname}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message}`,
     html: `
+  <body style="margin: 0; padding: 0; background-color: #f5f5f5;">
 <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 30px auto; background-color: #ffffff; border-radius: 10px; overflow: hidden; border: 1px solid #e5e5e5; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
 
-  <div style="background-color: #000; text-align: center; padding: 10px;">
-    <img src="https://res.cloudinary.com/dzhgubztu/image/upload/v1760467027/dl_white_empty_primary_bofism.png" alt="Dreamland Athletics" style="max-width: 160px; height: auto;" />
+  <div style="background-color: #000; text-align: center; padding: 20px;">
+    <img src="https://res.cloudinary.com/dzhgubztu/image/upload/v1760467027/dl_white_empty_primary_bofism.png" alt="Dreamland Athletics" style="max-width: 300px; height: auto;" />
   </div>
 
   <div style="background-color: #FFD700; padding: 20px; text-align: center;">
