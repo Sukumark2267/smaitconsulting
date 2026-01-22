@@ -17,7 +17,7 @@ export default function MobileMenu() {
         <Link href="/" className="flex items-center">
           <Image
             src="/images/logo/dl_primary_logo.png"
-            alt="Dreamland Athletics"
+            alt="smaitconsultinggroup"
             width={150}
             height={50}
             className="h-auto w-[150px]"

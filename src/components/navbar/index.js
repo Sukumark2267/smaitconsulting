@@ -149,17 +149,17 @@ export default function Navbar() {
     >
       <div className="w-full flex items-center justify-between px-4 lg:px-12 h-12 relative">
         {/* Logo */}
-        <div className="flex items-center">
+        {/* <div className="flex items-center">
           <Link href="/" className="flex items-center">
             <Image
-              src="/images/axispartner_logo.jpg"
+              src="/images/smaitlogo.jpeg"
               alt="SMA IT Consulting Group"
               width={240}
               height={70}
               className="h-[46px] w-auto object-contain"
             />
           </Link>
-        </div>
+        </div> */}
 
         {/* DESKTOP MENU */}
         <nav className="hidden lg:flex items-center gap-8 text-sm font-medium tracking-wide text-white">
