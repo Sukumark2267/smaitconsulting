@@ -18,7 +18,7 @@ export async function POST(req) {
     const adminEmail = "Jay@dreamlandathletics.com";
 
     // Email sender identity
-    const fromMail = "Dreamland Athletics <Jay@dreamlandathletics.com>";
+    const fromMail = "smait consulting group <Jay@dreamlandathletics.com>";
     const customerMail = contactTemplate({ fname, email, phone, message });
 
     // Generate email content from your template

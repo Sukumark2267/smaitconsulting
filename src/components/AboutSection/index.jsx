@@ -2,12 +2,7 @@
 <section className="py-16 px-4 rounded-xl flex items-center my-5">
 <div className="max-w-7xl w-full mx-auto">
   <div className="text-center mb-16">
-    {/* <Badge
-      variant="secondary"
-      className="mb-4 text-primary border-primary"
-    >
-      About Dreamland Athletics
-    </Badge> */}
+   
     <h2 className="text-6xl md:text-8xl lg:text-8xl border border-black border-solid mb-5 uppercase px-2 py-1 text-primary">
       What Sets us apart
     </h2>

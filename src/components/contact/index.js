@@ -79,14 +79,7 @@ const ContactSection = () => {
         viewport={{ once: false, amount: 0.3 }}
         transition={{ duration: 0.8, ease: 'easeOut' }}
       >
-        
-        <Image
-          src="/images/elements/YellowBorder.png"
-          alt="Section Divider Border"
-          fill
-          className="object-cover"
-          priority
-        />
+      
       </motion.div>
     </div>
 
@@ -98,7 +91,7 @@ const ContactSection = () => {
         <div>
           <div className="contact-info">
             <h4 style={{fontWeight:'bolder'}}>LOCATION</h4>
-            <p>860 N Park Dr, Brampton, ON L6S 4N5, Canada</p>
+            <p>77 City Center Drive, Suite 501,Mississauga,Ontario,L5B 1M5</p>
           </div>
           <div className="contact-info">
             <h4 style={{fontWeight:'bolder'}}>HOURS</h4>
@@ -107,14 +100,14 @@ const ContactSection = () => {
           </div>
           <div className="contact-info">
             <h4 style={{fontWeight:'bolder'}}>CONTACT</h4>
-            <a href="tel:+19055551234">(905) 555-1234</a>
-            <a href="mailto:info@dreamlandathletics.com">info@dreamlandathletics.com</a>
+            <a href="tel:+14387229543">(438) 7229543</a>
+            <a href="mailto:info@smitconsultinggroup.com">info@smitconsultinggroup.com</a>
             <a
-              href="https://www.instagram.com/dreamland_brampton"
+              href="https://www.instagram.com/smaitconsultinggroup/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              @dreamland_brampton
+              @sm
             </a>
           </div>
         </div>
@@ -144,7 +137,7 @@ const ContactSection = () => {
     >
       <div className="map-container">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d720.7687165970583!2d-79.74951353497413!3d43.72977157442773!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b173a1b0a0e17%3A0xdadb9bd5d608dd4e!2sDreamland%20Athletics!5e0!3m2!1sen!2sin!4v1747585502192!5m2!1sen!2sin"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2886.6012634864283!2d-79.7612346845022!3d43.73154897912171!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b34cbec4f4d7b%3A0x6d9275f6e8d5b6e2!2s860%20N%20Park%20Dr%2C%20Brampton%2C%20ON%20L6S%204N5%2C%20Canada!5e0!3m2!1sen!2sin!4v1700344567890!5m2!1sen!2sin"
           width="100%"
           height="450"
           allowFullScreen

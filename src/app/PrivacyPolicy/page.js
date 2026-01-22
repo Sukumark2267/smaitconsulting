@@ -33,7 +33,7 @@ export default function PrivacyPolicy() {
             <section>
               <h2 className="text-3xl mb-3 tracking-normal">1. Introduction</h2>
               <p>
-                Dreamland Athletics (&quot;we&quot;, &quot;our&quot;, &quot;us&quot;) is committed to
+                smaitconsultinggroup (&quot;we&quot;, &quot;our&quot;, &quot;us&quot;) is committed to
                 protecting your personal information and your right to privacy.
                 This Privacy Policy explains how we collect, use, disclose, and
                 safeguard your information when you visit our website or use our

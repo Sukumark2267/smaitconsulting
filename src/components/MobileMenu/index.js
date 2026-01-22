@@ -72,9 +72,18 @@ export default function MobileMenu({ isOpen, onClose }) {
             priority
           />
            {/* Logo Text */}
-    <span className="hidden sm:block text-white font-semibold tracking-wide text-sm lg:text-base whitespace-nowrap">
-      SMA IT CONSULTING GROUP
-    </span>
+   <span className="
+  hidden sm:block
+  text-[#b8c7dc]
+  font-medium
+  text-[11px]
+  lg:text-xs
+  tracking-[0.22em]
+  uppercase
+  whitespace-nowrap
+">
+  SMA IT CONSULTING GROUP
+</span>
         </Link>
 
         <button
