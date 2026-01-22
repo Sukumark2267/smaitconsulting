@@ -32,7 +32,7 @@ export default function Navbar() {
         <div className="flex items-center">
           <Link href="/" className="flex items-center">
             <Image
-              src="/images/axispartner_logo.jpg"
+              src="/images/smaitlogo.png"
               alt="SMA IT Consulting Group"
               width={240}
               height={70}

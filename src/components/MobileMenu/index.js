@@ -3,81 +3,242 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { HiMenu, HiX } from "react-icons/hi";
 
-export default function MobileMenu() {
-  const [open, setOpen] = useState(false);
+const mobileServices = [
+  "Strategy",
+  "Process Management",
+  "Program & Project Management",
+  "Data & Analytics",
+  "Technology",
+  "Cyber Security",
+  "Change Management",
+  "Learning & Development",
+];
+
+const mobileIndustries = [
+  "Financial Services",
+  "Government & Broader Public Sector",
+  "Healthcare",
+  "Travel and Events & Meetings",
+  "Social & Not-for-Profit",
+  "Transportation",
+  "Energy",
+];
+
+const mobileInsightsLeft = [
+  "Industry Insights",
+  "Service Insights",
+  "Case Studies",
+  "Company News",
+];
+
+const mobileInsightsTopics = [
+  "Overview",
+  "Public Sector",
+  "Data & Analytics",
+  "Strategy",
+  "Change Management",
+  "Financial Services",
+  "Healthcare",
+  "Learning & Development",
+  "Process",
+];
+
+export default function MobileMenu({ isOpen, onClose }) {
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const [industriesOpen, setIndustriesOpen] = useState(false);
+  const [insightsOpen, setInsightsOpen] = useState(false);
+
+  if (!isOpen) return null;
+
+  const closeAll = () => {
+    setServicesOpen(false);
+    setIndustriesOpen(false);
+    setInsightsOpen(false);
+    onClose?.();
+  };
 
   return (
-    <>
-      {/* Mobile Header */}
-      <div className="lg:hidden flex items-center justify-between px-4 py-3 bg-black border-b border-neutral-800">
-        
-        {/* Logo */}
-        <Link href="/" className="flex items-center">
+    <div className="lg:hidden bg-[#062a57] text-white border-t border-white/10">
+      {/* Top row with logo + close (optional) */}
+      <div className="flex items-center justify-between px-4 pt-3 pb-2">
+        <Link href="/" onClick={closeAll} className="flex items-center gap-2">
           <Image
-            src="/images/logo/dl_primary_logo.png"
-            alt="smaitconsultinggroup"
+            src="/images/smaitlogo.png"
+            alt="SMA IT Consulting Group"
             width={150}
             height={50}
-            className="h-auto w-[150px]"
+            className="h-8 w-auto"
             priority
           />
+           {/* Logo Text */}
+    <span className="hidden sm:block text-white font-semibold tracking-wide text-sm lg:text-base whitespace-nowrap">
+      SMA IT CONSULTING GROUP
+    </span>
         </Link>
 
-        {/* Menu Toggle Button */}
         <button
-          onClick={() => setOpen(!open)}
-          className="text-white text-3xl"
+          onClick={onClose}
+          className="text-xs font-semibold tracking-wide uppercase border border-white/30 rounded-full px-3 py-1"
         >
-          {open ? <HiX /> : <HiMenu />}
+          Close
         </button>
       </div>
 
-      {/* Mobile Slide Menu */}
-      {open && (
-        <div className="lg:hidden bg-black text-white px-6 py-4 font-swiss text-[14px] tracking-[0.15em] uppercase">
-          <nav className="flex flex-col space-y-4">
-
-            <Link href="/" onClick={() => setOpen(false)} className="hover:text-[var(--dl-gold)] transition">
-              Home
-            </Link>
-
-            <Link href="/about" onClick={() => setOpen(false)} className="hover:text-[var(--dl-gold)] transition">
-              About
-            </Link>
-
-            <Link href="/what-we-offer" onClick={() => setOpen(false)} className="hover:text-[var(--dl-gold)] transition">
-              What We Offer
-            </Link>
-
-            <Link href="/memberships" onClick={() => setOpen(false)} className="hover:text-[var(--dl-gold)] transition">
-              Memberships
-            </Link>
-
-            <Link href="/gallery" onClick={() => setOpen(false)} className="hover:text-[var(--dl-gold)] transition">
-              Gallery
-            </Link>
-
-            <Link href="/reviews" onClick={() => setOpen(false)} className="hover:text-[var(--dl-gold)] transition">
-              Reviews
-            </Link>
-
-            <Link href="/contact" onClick={() => setOpen(false)} className="hover:text-[var(--dl-gold)] transition">
-              Contact
-            </Link>
-
-            {/* Free Pass Button */}
-            <Link
-              href="/free-pass"
-              onClick={() => setOpen(false)}
-              className="mt-4 bg-[var(--dl-gold)] text-black py-2 px-5 rounded-md font-bold text-[13px] uppercase tracking-[0.20em] text-center"
-            >
-              Free Pass
-            </Link>
-          </nav>
+      <nav className="px-4 pb-5 text-sm font-medium space-y-3">
+        {/* SERVICES */}
+        <div className="border border-white/10 rounded-xl overflow-hidden">
+          <button
+            type="button"
+            onClick={() => {
+              setServicesOpen((v) => !v);
+              setIndustriesOpen(false);
+              setInsightsOpen(false);
+            }}
+            className="w-full flex items-center justify-between px-4 py-3 bg-[#07366e]"
+          >
+            <span>Services</span>
+            <span className="text-xs">{servicesOpen ? "−" : "+"}</span>
+          </button>
+          {servicesOpen && (
+            <div className="bg-[#041f45] px-4 py-3 space-y-2">
+              {mobileServices.map((item) => (
+                <button
+                  key={item}
+                  type="button"
+                  onClick={closeAll}
+                  className="block w-full text-left text-[13px] text-gray-100/90 py-1 hover:text-[#4ab0ff]"
+                >
+                  {item}
+                </button>
+              ))}
+              <Link
+                href="/Services"
+                onClick={closeAll}
+                className="mt-2 inline-flex text-[13px] text-[#4ab0ff] underline"
+              >
+                View all services
+              </Link>
+            </div>
+          )}
         </div>
-      )}
-    </>
+
+        {/* INDUSTRIES */}
+        <div className="border border-white/10 rounded-xl overflow-hidden">
+          <button
+            type="button"
+            onClick={() => {
+              setIndustriesOpen((v) => !v);
+              setServicesOpen(false);
+              setInsightsOpen(false);
+            }}
+            className="w-full flex items-center justify-between px-4 py-3 bg-[#07366e]"
+          >
+            <span>Industries</span>
+            <span className="text-xs">{industriesOpen ? "−" : "+"}</span>
+          </button>
+          {industriesOpen && (
+            <div className="bg-[#041f45] px-4 py-3 space-y-2">
+              {mobileIndustries.map((item) => (
+                <button
+                  key={item}
+                  type="button"
+                  onClick={closeAll}
+                  className="block w-full text-left text-[13px] text-gray-100/90 py-1 hover:text-[#4ab0ff]"
+                >
+                  {item}
+                </button>
+              ))}
+              <Link
+                href="/Industries"
+                onClick={closeAll}
+                className="mt-2 inline-flex text-[13px] text-[#4ab0ff] underline"
+              >
+                View all industries
+              </Link>
+            </div>
+          )}
+        </div>
+
+        {/* INSIGHTS */}
+        <div className="border border-white/10 rounded-xl overflow-hidden">
+          <button
+            type="button"
+            onClick={() => {
+              setInsightsOpen((v) => !v);
+              setServicesOpen(false);
+              setIndustriesOpen(false);
+            }}
+            className="w-full flex items-center justify-between px-4 py-3 bg-[#07366e]"
+          >
+            <span>Insights</span>
+            <span className="text-xs">{insightsOpen ? "−" : "+"}</span>
+          </button>
+          {insightsOpen && (
+            <div className="bg-[#041f45] px-4 py-3 space-y-3">
+              <div className="space-y-1">
+                {mobileInsightsLeft.map((item) => (
+                  <button
+                    key={item}
+                    type="button"
+                    onClick={closeAll}
+                    className="block w-full text-left text-[13px] text-gray-100/90 py-0.5 hover:text-[#4ab0ff]"
+                  >
+                    {item}
+                  </button>
+                ))}
+              </div>
+
+              <div className="border-t border-white/10 pt-2 mt-1 grid grid-cols-1 gap-y-1">
+                {mobileInsightsTopics.map((topic) => (
+                  <button
+                    key={topic}
+                    type="button"
+                    onClick={closeAll}
+                    className="block w-full text-left text-[13px] text-gray-300 py-0.5 hover:text-[#4ab0ff]"
+                  >
+                    {topic}
+                  </button>
+                ))}
+              </div>
+
+              <Link
+                href="/Insights"
+                onClick={closeAll}
+                className="mt-2 inline-flex text-[13px] text-[#4ab0ff] underline"
+              >
+                View all insights
+              </Link>
+            </div>
+          )}
+        </div>
+
+        {/* ABOUT & CAREERS */}
+        <Link
+          href="/AboutUs"
+          onClick={closeAll}
+          className="block py-1 text-[13px] text-gray-100 hover:text-[#4ab0ff]"
+        >
+          About
+        </Link>
+
+        <Link
+          href="/"
+          onClick={closeAll}
+          className="block py-1 text-[13px] text-gray-100 hover:text-[#4ab0ff]"
+        >
+          Careers
+        </Link>
+
+        {/* CTA */}
+        <Link
+          href="/ContactUs"
+          onClick={closeAll}
+          className="mt-3 inline-flex items-center justify-center w-full rounded-full bg-[#ff9800] text-[#0b2342] text-[13px] font-semibold py-2 shadow-md hover:bg-[#ffb733] transition"
+        >
+          Let&apos;s get to work
+        </Link>
+      </nav>
+    </div>
   );
 }

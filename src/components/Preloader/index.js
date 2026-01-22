@@ -7,8 +7,8 @@ export default function Preloader() {
   return (
     <div className="preloader">
       <Image
-        src="/images/smaitlogo.jpeg" 
-        alt="Loading..."
+        src="/images/smaitprelogo.png" 
+        alt="Consulting..."
         width={180}
         height={180}
       />

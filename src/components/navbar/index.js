@@ -147,19 +147,32 @@ export default function Navbar() {
         scrolled ? "bg-[#062a57] shadow-lg" : "bg-[#062a57]/90"
       }`}
     >
-      <div className="w-full flex items-center justify-between px-4 lg:px-12 h-12 relative">
+<div className="w-full flex items-center justify-between px-4 lg:px-12 h-16 relative">
         {/* Logo */}
-        {/* <div className="flex items-center">
+        <div className="flex items-center">
           <Link href="/" className="flex items-center">
             <Image
-              src="/images/smaitlogo.jpeg"
+              src="/images/smaitlogo.png"
               alt="SMA IT Consulting Group"
-              width={240}
-              height={70}
-              className="h-[46px] w-auto object-contain"
+              width={340}
+              height={100}
+              className="h-[48px] w-auto object-contain"
             />
+             {/* Logo Text */}
+    <span className="
+  hidden sm:block
+  text-[#f2c27b]
+  font-medium
+  text-[11px]
+  lg:text-xs
+  tracking-[0.28em]
+  uppercase
+  whitespace-nowrap
+">
+  SMA IT CONSULTING GROUP
+</span>
           </Link>
-        </div> */}
+        </div>
 
         {/* DESKTOP MENU */}
         <nav className="hidden lg:flex items-center gap-8 text-sm font-medium tracking-wide text-white">
@@ -284,7 +297,7 @@ export default function Navbar() {
             </button>
 
             {industriesOpen && (
-              <div className="absolute left-1/2 -translate-x-1/2 mt-4 w-[720px] max-w-[calc(100vw-4rem)]">
+              <div className="absolute left-[330%] -translate-x-1/2 mt-4 w-[720px] max-w-[calc(100vw-4rem)]">
                 <div className="rounded-3xl bg-white shadow-2xl overflow-hidden border border-gray-200 p-6 md:p-8">
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-4">
                     <h3 className="text-lg font-semibold text-gray-800 leading-snug">
@@ -334,7 +347,7 @@ export default function Navbar() {
             </button>
 
             {insightsOpen && (
-              <div className="absolute left-1/2 -translate-x-1/2 mt-4 w-[760px] max-w-[calc(100vw-4rem)]">
+              <div className="absolute left-[330%] -translate-x-1/2 mt-4 w-[760px] max-w-[calc(100vw-4rem)]">
                 <div className="rounded-3xl bg-white shadow-2xl overflow-hidden border border-gray-200 p-6 md:p-8">
                   <div className="grid grid-cols-[220px,1fr] gap-8">
                     {/* LEFT COLUMN */}
@@ -422,7 +435,7 @@ export default function Navbar() {
           onClick={toggleMenu}
           aria-label="Toggle menu"
         >
-          <Menu size={26} />
+          <Menu size={26} className="text-white"/>
         </button>
       </div>
 

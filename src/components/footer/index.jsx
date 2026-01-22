@@ -97,7 +97,7 @@ export default function CallToActionSection() {
           <div className="flex flex-wrap items-center gap-4">
             <div className="flex items-center gap-2">
               <span className="text-lg">📍</span>
-              <span>Bangalore, IN</span>
+              <span>77 City Center Drive, Suite 501,Mississauga,Ontario,L5B 1M5</span>
             </div>
 
             <span className="hidden md:inline-block h-px w-10 bg-blue-300/60" />
