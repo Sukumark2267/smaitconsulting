@@ -125,7 +125,7 @@
   --ring: oklch(0.708 0 0);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-3: oklch(35.205% 0.20619 277.22);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
   --sidebar: oklch(0.985 0 0);
@@ -148,8 +148,8 @@ body {
   /* overflow-y: hidden !important; */
 }
 
-header {
-  background: var(--dark-bg);
+/* header {
+ 
   padding: 1.5rem 2rem;
   display: flex;
   justify-content: space-between;
@@ -158,7 +158,7 @@ header {
   top: 0;
   z-index: 100;
   overflow-x: hidden !important;
-}
+} */
 
 h3 {
   font-family: "AlternateGothicNo1";
@@ -713,7 +713,7 @@ footer {
 
   nav {
     position: fixed;
-    top: 80px;
+    top: 10px;
     left: 0;
     right: 0;
     background: var(--dark-bg);
@@ -995,7 +995,7 @@ footer {
 
 @media (max-width: 1000px) {
   footer {
-    background: var(--dark-bg);
+    background: var(--chart-3);
     padding: 3rem 1rem;
     text-align: center;
   }
@@ -1314,4 +1314,45 @@ footer {
 
 .animate-underline {
   animation: underlineGrow 1s ease-out 0.4s forwards;
+}
+/* ===== Hero animations ===== */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.7s ease-out both;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.7s ease-out both;
+}
+.section-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.section-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+html, body {
+  overflow-x: hidden !important;
 }

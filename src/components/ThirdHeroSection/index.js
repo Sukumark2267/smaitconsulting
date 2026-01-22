@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
-export default function CaseStudySection4() {
+export default function CaseStudySection3() {
   const ref = useRef(null);
   const [visible, setVisible] = useState(false);
 
@@ -35,43 +35,63 @@ export default function CaseStudySection4() {
     >
       {/* FULL-WIDTH ROW, NO max-w / NO horizontal padding */}
       <div className="flex flex-col lg:flex-row items-stretch gap-6 md:gap-10 w-full">
-        {/* LEFT CONTENT */}
-        <div className="flex-[0.9] flex flex-col justify-center pl-6 lg:pl-16">
-          {/* Heading box */}
+
+        {/* LEFT IMAGE PANEL – FULL BLEED */}
+        <div className="flex-[1.2]">
+          <div className="relative w-full h-[420px] md:h-[480px] lg:h-[520px] overflow-hidden">
+            <Image
+              src="/images/section3_image.png"   // your image
+              alt="Case study visual"
+              fill
+              className="object-cover"
+            />
+          </div>
+        </div>
+
+        {/* CHEVRON (REVERSED) */}
+        <div className="hidden lg:flex items-center justify-center px-4">
+          <svg
+            viewBox="0 0 60 260"
+            className="h-64 w-auto drop-shadow-md scale-x-[-1]"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <polygon
+              points="4,0 56,130 4,260 14,130"
+              fill="white"
+              stroke="#32a4ff"
+              strokeWidth="4"
+            />
+          </svg>
+        </div>
+
+        {/* RIGHT CONTENT – WE ADD PADDING ONLY HERE */}
+        <div className="flex-[0.9] flex flex-col justify-center pr-6 lg:pr-16">
           <div className="border border-black px-6 py-6 md:px-8 md:py-8 max-w-xl">
             <h2 className="text-lg md:text-xl lg:text-2xl font-semibold leading-snug text-[#1a1a1a]">
-              E2E Finance Transformation:
-              <br className="hidden md:block" />
-              <span className="font-normal">
-                {" "}
-                Enhancing Compliance and Efficiency for Long-Term Success
-              </span>
+              Improving Data Quality for Operational Efficiency and Strategic Empowerment
             </h2>
           </div>
 
-          {/* Tags */}
           <div className="mt-5 flex flex-wrap items-center gap-4 text-sm md:text-[15px]">
             <button className="inline-flex items-center gap-2 text-[#0066cc]">
-              <span>🏦</span>
-              <span>Financial Services</span>
+              <span>🏛</span>
+              <span>Social &amp; Not-for-Profit</span>
             </button>
 
             <span className="h-4 w-px bg-gray-300 hidden sm:inline-block" />
 
             <button className="inline-flex items-center gap-2 text-[#0066cc]">
-              <span>📁</span>
-              <span>Program &amp; Project Management</span>
+              <span>📊</span>
+              <span>Data &amp; Analytics</span>
             </button>
           </div>
 
-          {/* Description */}
           <p className="mt-4 max-w-xl text-sm md:text-base text-[#4b4b4b] leading-relaxed">
-            Finance transformation initiatives streamline operations, enhance
-            data accuracy, and optimize reporting, leading to increased
-            efficiency and strengthened strategic leadership.
+            Established foundational data management disciplines to improve data
+            quality across five core systems, enhancing decision-making and
+            driving operational efficiency.
           </p>
 
-          {/* CTA */}
           <button
             className="mt-6 inline-flex items-center justify-center rounded-full 
                        bg-[#062a57] text-white text-sm md:text-base font-semibold 
@@ -79,34 +99,6 @@ export default function CaseStudySection4() {
           >
             Read the case study
           </button>
-        </div>
-
-        {/* CHEVRON (PINK) */}
-        <div className="hidden lg:flex items-center justify-center px-4">
-          <svg
-            viewBox="0 0 60 260"
-            className="h-64 w-auto drop-shadow-md"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <polygon
-              points="4,0 56,130 4,260 14,130"
-              fill="white"
-              stroke="#ff4f8b"
-              strokeWidth="4"
-            />
-          </svg>
-        </div>
-
-        {/* RIGHT IMAGE PANEL – FULL BLEED IN ITS COLUMN */}
-        <div className="flex-[1.2]">
-          <div className="relative w-full h-[420px] md:h-[480px] lg:h-[520px] overflow-hidden">
-            <Image
-              src="/images/section3_image.png"   // <- make sure this file exists
-              alt="Finance transformation visual"
-              fill
-              className="object-cover"
-            />
-          </div>
         </div>
       </div>
     </section>

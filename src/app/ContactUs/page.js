@@ -4,15 +4,12 @@ import './Contact.css';
 import { useState, useEffect, useLayoutEffect } from 'react';
 import Navbar from '@/components/navbar';
 import Footer from '@/components/footer'; 
-import ServiceChart from '@/components/membership';
+import ServiceChart from '@/components/ThirdHeroSection';
 import ContactSection from '@/components/contact';
-import GroupService from '@/components/GroupService';
 import Preloader from '@/components/Preloader';
 import dynamic from 'next/dynamic';
 
-const SpecialPrograms = dynamic(() => import('@/components/SpecialPrograms'), {
-  ssr: false,
-});
+
 import { TextHoverEffect } from "@/components/ui/text-hover-effect";
 
 
@@ -41,8 +38,6 @@ export default function ContactUs() {
          </div>
          </div>
          <ContactSection />
-         {/* <GroupService />
-         <SpecialPrograms /> */}
          <Footer />
          </section>
     </main>

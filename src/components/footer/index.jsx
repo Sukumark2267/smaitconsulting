@@ -1,130 +1,167 @@
-// components/Footer.jsx
-import React from "react";
-import Image from "next/image";
+"use client";
+
 import Link from "next/link";
-import { FaInstagram, FaFacebookF, FaTwitter, FaTiktok } from "react-icons/fa";
-import SocialButtons from "../SocialButtons";
+import { useEffect, useRef, useState } from "react";
 
-const Footer = () => {
+const ctaServices = [
+  "Strategy",
+  "Process Management",
+  "Program & Project Management",
+  "Data & Analytics",
+  "Technology",
+  "Cyber Security",
+  "Change Management",
+  "Learning & Development",
+];
+
+export default function CallToActionSection() {
+  const ref = useRef(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    if (!ref.current) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setVisible(true);
+            observer.disconnect();
+          }
+        });
+      },
+      { threshold: 0.25 }
+    );
+
+    observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <>
-      <footer>
-        <div className="footer-content justify-center lg:justify-evenly hidden lg:flex">
-          {/* Brand Info */}
-          <div className="footer-column">
-            <div className="flex">
-              <div>
-                <Image
-                  src="/images/logo/dl_icon_white_empty.png"
-                  alt="Logo"
-                  width={500}
-                  height={500}
-                  className="hidden lg:block md:h-8/9 xl:h-8/9 lg:w-35 xl:w-48 lg:mr-2 xl:mr-10"
-                />
-              </div>
-              <div>
-                <Link href="/">
-                  <Image
-                    src="/images/logo/dl_white_empty_primary - text.png"
-                    alt="Logo"
-                    width={200}
-                    height={100}
-                    className="hidden lg:block"
-                  />
-                </Link>{" "}
-                <Link href="/">
-                  <Image
-                    src="/images/logo/dl_white_empty_primary.png"
-                    alt="Logo"
-                    width={400}
-                    height={100}
-                    className="mx-auto block lg:hidden"
-                  />
-                </Link>{" "}
-                <br></br>
-                {/* <h4>DREAMLAND <br></br>ATHLETICS</h4> */}
-                <p className="w-95 md:w-170 lg:w-80">
-                  Brampton&rsquo;s premier fitness facility specializing in
-                  athletic performance training and community fitness.
-                </p>
-                <div className="min-h-20 bg-none flex justify-center lg:justify-start md:scale-80 lg:scale-85">
-                  <SocialButtons />
-                </div>
-              </div>
-            </div>
+    <section
+      ref={ref}
+      className={`
+        relative text-white 
+        bg-gradient-to-b from-[#063873] via-[#052b5a] to-[#041f40]
+        pt-14 md:pt-16 pb-20
+        ${visible ? "section-reveal visible" : "section-reveal"}
+      `}
+    >
+      {/* subtle background shape on the left */}
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 opacity-20">
+        <div className="h-full translate-x-[-30%] bg-[radial-gradient(circle_at_top_left,#1b6ddf,transparent_60%)]" />
+      </div>
+
+      <div className="relative max-w-6xl mx-auto px-6 lg:px-0">
+        {/* TOP: CTA row */}
+        <div className="flex flex-col lg:flex-row items-start lg:items-center gap-8 lg:gap-12">
+          {/* Left highlight box (can be used for tagline or quick note) */}
+          <div className="border-2 border-[#4b8dff] bg-[#1b3f7b]/60 px-6 py-5 min-w-[260px]">
+            <p className="text-xs tracking-[0.18em] uppercase text-blue-100 mb-1">
+              SMA IT Consulting Group
+            </p>
+            <p className="text-sm md:text-base text-blue-50">
+              Practical consulting for data, privacy, and digital
+              transformation initiatives.
+            </p>
           </div>
 
-          {/* Quick Links */}
-          <div className="footer-column">
-            <div className="footer-column-1">
-              <h4>Quick Links</h4>
-              <ul className="footer-links">
-                <li>
-                  <Link href="/AboutUs">About</Link>
-                </li>
-                <li>
-                  <Link href="/Services">Services</Link>
-                </li>
-                <li>
-                  <Link href="https://www.instagram.com/dreamland_brampton">
-                    Instagram
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
+          {/* Right headline + button */}
+          <div className="flex-1 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight">
+              Let&apos;s get to work!
+            </h2>
 
-          {/* Quick Links */}
-          <div className="footer-column">
-            <div className="footer-column-2">
-              <h4>Support</h4>
-              <ul className="footer-links">
-                <li>
-                  <Link href="/ContactUs">Contact Us</Link>
-                </li>
-                <li>
-                  <Link href="/PrivacyPolicy">Privacy Policies</Link>
-                </li>
-                <li>
-                  <Link href="/TermsAndConditions">Terms & Conditions</Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-          {/* Hours */}
-          <div className="footer-column">
-            <div className="footer-column-3">
-              <h4>Timings</h4>
-              <ul className="footer-links">
-                <li>Mon–Fri: 5am – 10pm</li>
-                <li>Sat–Sun: 7am – 8pm</li>
-                <li>Holidays: 8am – 4pm</li>
-              </ul>
-            </div>
+            <Link
+              href="/ContactUs"
+              className="
+                inline-flex items-center gap-2
+                rounded-full border-2 border-[#ff9800]
+                bg-[#ff9800] text-[#0b2342]
+                px-7 py-3 text-sm md:text-base font-semibold
+                shadow-md
+                transition-all
+                hover:bg-transparent hover:text-[#ff9800]
+                hover:shadow-lg
+              "
+            >
+              Start right now
+              <span className="translate-y-[1px]">➜</span>
+            </Link>
           </div>
         </div>
 
-        {/* Hours */}
-        <div className="footer-column-mob pt-3 lg:hidden">
-          <div className="footer-column-3-mob">
-            <h4>Timings</h4>
-            <ul className="footer-links-mob">
-              <li>Mon–Fri: 5am – 10pm</li>
-              <li>Sat–Sun: 7am – 8pm</li>
-              <li>Holidays: 8am – 4pm</li>
-            </ul>
+        {/* MIDDLE: location + quick meta + social icons */}
+        <div className="mt-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6 text-sm text-blue-100">
+          {/* location + metrics */}
+          <div className="flex flex-wrap items-center gap-4">
+            <div className="flex items-center gap-2">
+              <span className="text-lg">📍</span>
+              <span>Bangalore, IN</span>
+            </div>
+
+            <span className="hidden md:inline-block h-px w-10 bg-blue-300/60" />
+
+            <div className="flex items-center gap-2">
+              <span className="text-lg">⚡</span>
+              <span>Independent consulting that turns strategy into action.</span>
+            </div>
+          </div>
+
+          {/* social icons */}
+          <div className="flex items-center gap-3">
+            <a
+              href="#"
+              className="w-9 h-9 rounded-full border border-blue-300/70 flex items-center justify-center text-xs font-semibold hover:bg-white/10"
+            >
+              in
+            </a>
+            <a
+              href="#"
+              className="w-9 h-9 rounded-full border border-blue-300/70 flex items-center justify-center text-xs font-semibold hover:bg-white/10"
+            >
+              ▶
+            </a>
           </div>
         </div>
 
-        <div className="copyright">
-          <p>
-            &copy; {new Date().getFullYear()} Dreamland Athletics. All rights
-            reserved.
+        {/* BOTTOM: services tiles row */}
+        <div className="mt-10">
+          <p className="text-xs md:text-sm text-blue-100 mb-4">
+            We help organizations move from intent to impact across:
           </p>
-        </div>
-      </footer>
-    </>
-  );
-};
 
-export default Footer;
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 md:gap-5">
+            {ctaServices.map((srv) => (
+              <div
+                key={srv}
+                className="rounded-2xl bg-white/5 border border-white/10 px-4 py-4
+                           text-sm md:text-[13px] text-blue-50 shadow-sm
+                           hover:bg-white/10 hover:border-white/40 transition"
+              >
+                {srv}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* FOOTER TEXT ROW (simple links) */}
+        <div className="mt-10 pt-6 border-t border-blue-700/60 text-[11px] md:text-xs text-blue-200 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+          <span>© {new Date().getFullYear()} SMA IT Consulting Group. All rights reserved.</span>
+
+          <div className="flex flex-wrap gap-4">
+            <a href="#" className="hover:text-white">
+              Accessibility
+            </a>
+            <a href="#" className="hover:text-white">
+              Privacy Policy
+            </a>
+            <a href="#" className="hover:text-white">
+              Cookies
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

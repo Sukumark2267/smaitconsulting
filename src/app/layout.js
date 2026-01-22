@@ -25,8 +25,8 @@ export const anton = Anton({
 });
 
 export const metadata = {
-  title: "Dreamland Athletics",
-  description: "Dreamland Athletics",
+  title: "SMA IT Consulting Group",
+  description: "SMA IT Consulting Group",
 };
 
 export default function RootLayout({ children }) {

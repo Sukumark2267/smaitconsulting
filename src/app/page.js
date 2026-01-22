@@ -4,15 +4,15 @@ import Script from 'next/script';
 import Preloader from '@/components/Preloader';
 import HeroSection from '@/components/HeroSection';
 import ProgramsSection from '@/components/programs';
-import MembershipSection from '@/components/membership';
+import ThirdHeroSection from '@/components/ThirdHeroSection';
 import Services from '@/components/Services';
 import ContactSection from '@/components/contact';
-import Newsletter from '@/components/Newsletter';
-import Banner from '@/components/Banner';
+import ServicesSection from '@/components/ServicesSection';
+import ReviewsSection from '@/components/ReviewsSection';
 import Footer from '@/components/footer';
 import Navbar from '@/components/navbar';
-import InstagramFeed from '@/components/instagram';
-import FounderSocials from '@/components/FounderSocials';
+import SecondHeroSection from '@/components/SecondHeroSection';
+import FourthHeroSection from '@/components/FourthHeroSection';
 
 
 export default function Home() {
@@ -41,12 +41,12 @@ export default function Home() {
     <Navbar />
 
       <HeroSection/>
-      <InstagramFeed/>
-      <MembershipSection/>
+      <SecondHeroSection/>
+      <ThirdHeroSection/>
       <Services/>
-      <FounderSocials/>
-      <Newsletter/>
-      <Banner/>
+      <FourthHeroSection/>
+      <ServicesSection/>
+      <ReviewsSection/>
       <Footer />
 
     </main>
