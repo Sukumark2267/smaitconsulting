@@ -32,10 +32,7 @@ export default function Nutrition() {
          {/* <TextHoverEffect h1>ABOUT US</h1> */}
          </div>
          </div>
-         <NutritionBlogs />
-         <NutritionForm />
-         <NutritionFAQ />
-         <Nutritionist />
+        
          <Footer />
           </section>
     </>
