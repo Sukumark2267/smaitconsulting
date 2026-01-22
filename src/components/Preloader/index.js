@@ -7,7 +7,7 @@ export default function Preloader() {
   return (
     <div className="preloader">
       <Image
-        src="/images/axispartner_logo.jpg" 
+        src="/images/smaitlogo.jpeg" 
         alt="Loading..."
         width={180}
         height={180}
