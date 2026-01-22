@@ -47,7 +47,7 @@ export default function About() {
               </h1>
 
               <p className="text-sm sm:text-base text-slate-200/85 max-w-xl mb-6">
-                SMA  IT Partners is a strategy and technology consulting firm
+                SMA IT Consulting Group is a strategy and technology consulting firm
                 working at the intersection of business goals, data, and
                 digital platforms. We partner with financial services and
                 technology-driven organizations to design, deliver, and scale

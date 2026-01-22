@@ -4,10 +4,6 @@ import './Nutrition.css';
 import { useState, useEffect, useLayoutEffect } from 'react';
 import Navbar from '@/components/navbar';
 import Footer from '@/components/footer';
-import Nutritionist from '@/components/Nutritionist';
-import NutritionFAQ from '@/components/NutritionFAQ';
-import NutritionBlogs from "@/components/NutritionBlogs";
-import NutritionForm from '@/components/NutritionForm';
 import Preloader from '@/components/Preloader';
 import { TextHoverEffect } from "@/components/ui/text-hover-effect";
 
