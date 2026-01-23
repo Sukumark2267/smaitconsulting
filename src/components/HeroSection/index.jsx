@@ -18,7 +18,7 @@ export default function HeroSection() {
       {/* Content */}
       <div className="relative z-10 max-w-5xl px-6 lg:px-16 py-24">
         {/* Black box with main heading */}
-        <div className="bg-black/95 border border-white px-6 py-8 sm:px-10 sm:py-10 max-w-3xl animate-fade-in-up">
+<div className="bg-[#062a57]/40 backdrop-blur-sm border border-white/20 px-6 py-8 sm:px-10 sm:py-10 max-w-3xl animate-fade-in-up">
           <h1 className="text-2xl sm:text-3xl lg:text-4xl font-semibold leading-snug">
             We Deliver{" "}
             <span className="font-bold italic">what matters most</span>

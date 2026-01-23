@@ -91,7 +91,7 @@ const ContactSection = () => {
         <div>
           <div className="contact-info">
             <h4 style={{fontWeight:'bolder'}}>LOCATION</h4>
-            <p>77 City Center Drive, Suite 501,Mississauga,Ontario,L5B 1M5</p>
+            <p>30 Eglinton Ave W #400, Mississauga, ON, L5R 3E7</p>
           </div>
           <div className="contact-info">
             <h4 style={{fontWeight:'bolder'}}>HOURS</h4>

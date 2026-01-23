@@ -101,7 +101,7 @@ export default function CaseStudySection4() {
         <div className="flex-[1.2]">
           <div className="relative w-full h-[420px] md:h-[480px] lg:h-[520px] overflow-hidden">
             <Image
-              src="/images/section3_image.png"   // <- make sure this file exists
+              src="/images/section4_image.png"   // <- make sure this file exists
               alt="Finance transformation visual"
               fill
               className="object-cover"

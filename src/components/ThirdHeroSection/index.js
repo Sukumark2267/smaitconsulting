@@ -34,7 +34,7 @@ export default function CaseStudySection3() {
       }`}
     >
       {/* FULL-WIDTH ROW, NO max-w / NO horizontal padding */}
-      <div className="flex flex-col lg:flex-row items-stretch gap-6 md:gap-10 w-full">
+      <div className="flex  flex-col lg:flex-row items-stretch gap-6 md:gap-10 w-full">
 
         {/* LEFT IMAGE PANEL – FULL BLEED */}
         <div className="flex-[1.2]">

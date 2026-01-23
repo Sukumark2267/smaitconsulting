@@ -107,46 +107,10 @@ export default function ServicesSection() {
       </div>
 
       <div className="max-w-6xl mx-auto px-6 lg:px-0 relative z-10">
-        {/* Headline */}
-        <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-snug max-w-4xl">
-          Our services, processes, and frameworks{" "}
+       
           <span className="text-[#0a63c9] font-bold">
-            inspire a sense of confidence
+           Our services, processes, and frameworks  inspire a sense of confidence  that no matter the complexity we'll find clarity.{" "}
           </span>{" "}
-          that no matter the complexity we&apos;ll{" "}
-          <span className="text-[#0a63c9] font-bold">find clarity.</span>
-        </h2>
-
-        {/* Tabs */}
-        <div className="mt-10 flex items-center gap-6 text-sm md:text-base">
-          <button
-            className={`relative font-medium ${
-              activeTab === "services"
-                ? "text-[#0a63c9]"
-                : "text-gray-500 hover:text-gray-800"
-            }`}
-            onClick={() => setActiveTab("services")}
-          >
-            Services
-            {activeTab === "services" && (
-              <span className="absolute -right-5 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-[#ff7b2a]" />
-            )}
-          </button>
-
-          <button
-            className={`relative font-medium ${
-              activeTab === "industries"
-                ? "text-[#0a63c9]"
-                : "text-gray-500 hover:text-gray-800"
-            }`}
-            onClick={() => setActiveTab("industries")}
-          >
-            Industries
-            {activeTab === "industries" && (
-              <span className="absolute -right-5 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-[#ff7b2a]" />
-            )}
-          </button>
-        </div>
 
         {/* Cards */}
         <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">

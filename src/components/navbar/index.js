@@ -147,35 +147,38 @@ export default function Navbar() {
         scrolled ? "bg-[#062a57] shadow-lg" : "bg-[#062a57]/90"
       }`}
     >
-<div className="w-full flex items-center justify-between px-4 lg:px-12 h-16 relative">
-        {/* Logo */}
-        <div className="flex items-center">
-          <Link href="/" className="flex items-center">
+      {/* slightly less horizontal padding + small gap so content fits better */}
+<div className="w-full flex items-center justify-between px-2 lg:px-6 h-16 relative">
+        {/* Logo + wordmark */}
+        <div className="flex items-center min-w-0">
+          <Link href="/" className="flex items-center min-w-0">
             <Image
               src="/images/smaitlogo.png"
               alt="SMA IT Consulting Group"
-              width={340}
-              height={100}
-              className="h-[48px] w-auto object-contain"
+              width={280}
+              height={90}
+              className="h-[40px] sm:h-[44px] w-auto object-contain"
             />
-             {/* Logo Text */}
-    <span className="
-  hidden sm:block
-  text-[#f2c27b]
-  font-medium
-  text-[11px]
-  lg:text-xs
-  tracking-[0.28em]
-  uppercase
-  whitespace-nowrap
-">
+          <span
+  className="
+    hidden sm:inline-block
+    ml-3
+    text-[#f2c27b]
+    font-medium
+    text-[10px] sm:text-[12px] lg:text-[14px]
+    tracking-[0.22em]
+    uppercase
+    whitespace-nowrap
+  "
+>
   SMA IT CONSULTING GROUP
 </span>
+
           </Link>
         </div>
 
         {/* DESKTOP MENU */}
-        <nav className="hidden lg:flex items-center gap-8 text-sm font-medium tracking-wide text-white">
+        <nav className="hidden lg:flex items-center gap-5 xl:gap-7 text-[13px] xl:text-sm font-medium tracking-wide text-white">
           {/* SERVICES MEGA MENU */}
           <div
             className="relative"
@@ -191,7 +194,7 @@ export default function Navbar() {
             </button>
 
             {servicesOpen && (
-              <div className="absolute left-[20%] mt-4 w-[800px] max-w-[calc(100vw-6rem)]">
+  <div className="absolute  top-full pt-2 w-[800px] max-w-[calc(100vw-6rem)]">
                 <div className="rounded-3xl bg-white shadow-2xl overflow-hidden border border-gray-200">
                   <div className="grid grid-cols-1 md:grid-cols-3">
                     {/* LEFT: list */}
@@ -269,7 +272,7 @@ export default function Navbar() {
                         </div>
                         <Link
                           href="/ContactUs"
-                          className="inline-flex items-center justify-between rounded-full border-2 border-[#ff9800] bg-[#ff9800] text-xs md:text-sm font-semibold px-5 py-2 text-[#0b2342] shadow-sm hover:bg-transparent hover:text-[#ff9800] transition"
+                          className="inline-flex items-center justify-between rounded-full border-2 border-[#ff9800] bg-[#ff9800] text-xs md:text-sm font-semibold px-4 py-2 text-[#0b2342] shadow-sm hover:bg-transparent hover:text-[#ff9800] transition"
                         >
                           Let&apos;s Get to Work
                           <span className="ml-1 text-sm">➜</span>
@@ -297,7 +300,7 @@ export default function Navbar() {
             </button>
 
             {industriesOpen && (
-              <div className="absolute left-[330%] -translate-x-1/2 mt-4 w-[720px] max-w-[calc(100vw-4rem)]">
+  <div className="absolute left-[290%] -translate-x-1/2 mt-4 w-[720px] max-w-[calc(100vw-4rem)]">
                 <div className="rounded-3xl bg-white shadow-2xl overflow-hidden border border-gray-200 p-6 md:p-8">
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-4">
                     <h3 className="text-lg font-semibold text-gray-800 leading-snug">
@@ -347,7 +350,7 @@ export default function Navbar() {
             </button>
 
             {insightsOpen && (
-              <div className="absolute left-[330%] -translate-x-1/2 mt-4 w-[760px] max-w-[calc(100vw-4rem)]">
+  <div className="absolute left-[330%] -translate-x-1/2 top-full pt-2 w-[760px] max-w-[calc(100vw-4rem)]">
                 <div className="rounded-3xl bg-white shadow-2xl overflow-hidden border border-gray-200 p-6 md:p-8">
                   <div className="grid grid-cols-[220px,1fr] gap-8">
                     {/* LEFT COLUMN */}
@@ -409,13 +412,13 @@ export default function Navbar() {
         </nav>
 
         {/* CTA (RIGHT) */}
-        <div className="hidden lg:flex">
+        <div className="hidden lg:flex shrink-0">
           <button
             className="
               group flex items-center gap-2 
               rounded-full border-2 border-[#ff9800]
-              bg-[#ff9800] text-sm font-semibold
-              px-5 py-2
+              bg-[#ff9800] text-[13px] font-semibold
+              px-4 py-2
               shadow-md
               transition-all
               hover:bg-transparent hover:text-[#ff9800]
@@ -435,7 +438,7 @@ export default function Navbar() {
           onClick={toggleMenu}
           aria-label="Toggle menu"
         >
-          <Menu size={26} className="text-white"/>
+          <Menu size={26} className="text-white" />
         </button>
       </div>
 

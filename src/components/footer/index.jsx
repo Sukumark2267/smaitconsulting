@@ -97,7 +97,7 @@ export default function CallToActionSection() {
           <div className="flex flex-wrap items-center gap-4">
             <div className="flex items-center gap-2">
               <span className="text-lg">📍</span>
-              <span>77 City Center Drive, Suite 501,Mississauga,Ontario,L5B 1M5</span>
+              <span>30 Eglinton Ave W #400, Mississauga, ON, L5R 3E7</span>
             </div>
 
             <span className="hidden md:inline-block h-px w-10 bg-blue-300/60" />
@@ -147,7 +147,7 @@ export default function CallToActionSection() {
 
         {/* FOOTER TEXT ROW (simple links) */}
         <div className="mt-10 pt-6 border-t border-blue-700/60 text-[11px] md:text-xs text-blue-200 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
-          <span>© {new Date().getFullYear()} SMA IT Consulting Group. All rights reserved.</span>
+          <span>© 2012 SMA IT Consulting Group. All rights reserved.</span>
 
           <div className="flex flex-wrap gap-4">
             <a href="#" className="hover:text-white">
