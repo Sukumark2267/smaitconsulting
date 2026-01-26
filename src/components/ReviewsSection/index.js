@@ -1,185 +1,107 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import React from "react";
 
-// Testimonials data with graphic avatars
-const testimonials = [
+const reviews = [
   {
-    name: "Anita",
-    role: "CFO",
-    icon: "👩‍💼",
-    text: "They brought clarity to complex regulatory requirements and helped us build a scalable operating model.",
+    name: "Ananya",
+    role: "Senior IT Consultant",
+    quote:
+      "The team at SMA IT Consulting Group is exceptional. They guided me every step of the way to secure a fantastic position.",
   },
   {
-    name: "Michael",
-    role: "Head of Operations",
-    icon: "👨‍💼",
-    text: "Their consultants quickly became trusted partners for our internal teams, driving measurable improvements.",
+    name: "Daniel",
+    role: "Program Manager",
+    quote:
+      "SMA IT Consulting Group was instrumental in landing my next role. Their industry connections are unmatched.",
+  },
+  {
+    name: "Ozgur",
+    role: "Lending Operations Specialist",
+    quote:
+      "SMA IT Consulting Group is the go-to consulting firm. Their expertise and connections in the industry are unparalleled.",
   },
   {
     name: "Sonia",
     role: "Project Manager",
-    icon: "👩‍💻",
-    text: "SMA IT Consulting Group exceeded my expectations. Their dedication and insight into our business challenges were remarkable.",
+    quote:
+      "SMA IT Consulting Group exceeded my expectations. Their dedication and network within the industry are remarkable.",
   },
   {
     name: "Wasim",
     role: "Business Analyst",
-    icon: "🧑‍💻",
-    text: "I highly recommend SMA IT Consulting Group. Their structure and communication throughout the engagement were incredible.",
+    quote:
+      "I highly recommend SMA IT Consulting Group. Their commitment and connections in the industry are incredible.",
+  },
+  {
+    name: "Roy",
+    role: "Vice President, Technology",
+    quote:
+      "SMA IT Consulting Group played a crucial role in strengthening our delivery outcomes and client relationships.",
   },
 ];
 
-const ITEMS_PER_PAGE = 3;
+function getInitials(name) {
+  return name
+    .split(" ")
+    .map((n) => n[0])
+    .join("")
+    .toUpperCase();
+}
 
 export default function ReviewsSection() {
-  const [startIndex, setStartIndex] = useState(0);
-  const ref = useRef(null);
-  const [visible, setVisible] = useState(false);
-
-  const totalPages = Math.ceil(testimonials.length / ITEMS_PER_PAGE);
-  const currentPage = Math.floor(startIndex / ITEMS_PER_PAGE);
-
-  // Scroll reveal animation
-  useEffect(() => {
-    if (!ref.current) return;
-
-    const observer = new IntersectionObserver(
-      (entries) =>
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setVisible(true);
-            observer.disconnect();
-          }
-        }),
-      { threshold: 0.2 }
-    );
-
-    observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, []);
-
-  // Next / Prev
-  const handleNext = () => {
-    setStartIndex((prev) =>
-      (prev + ITEMS_PER_PAGE) % (ITEMS_PER_PAGE * totalPages)
-    );
-  };
-
-  const handlePrev = () => {
-    setStartIndex((prev) =>
-      (prev - ITEMS_PER_PAGE + ITEMS_PER_PAGE * totalPages) %
-      (ITEMS_PER_PAGE * totalPages)
-    );
-  };
-
-  // Visible items handling
-  const visibleItems = testimonials.slice(
-    startIndex,
-    startIndex + ITEMS_PER_PAGE
-  );
-
-  const itemsToShow =
-    visibleItems.length < ITEMS_PER_PAGE
-      ? [
-          ...visibleItems,
-          ...testimonials.slice(0, ITEMS_PER_PAGE - visibleItems.length),
-        ]
-      : visibleItems;
-
   return (
     <section
-      ref={ref}
-      className={`relative 
-      bg-gradient-to-b from-[#eef4ff] to-[#d9e7ff] 
-      py-16 md:py-20 
-      ${
-        visible ? "section-reveal visible" : "section-reveal"
-      }`}
+      id="reviews"
+      className="w-full py-16 sm:py-20 bg-[#f5f7fb]"
     >
-      <div className="max-w-6xl mx-auto px-6 lg:px-0">
-        
+      <div className="max-w-6xl mx-auto px-6 lg:px-10">
         {/* Heading */}
-        <h2 className="text-center text-2xl md:text-3xl font-semibold text-[#1a1a1a] mb-12">
-          Reviews
-        </h2>
-
-        {/* Row with arrows */}
-        <div className="flex items-center gap-4 md:gap-8">
-          
-          {/* Left Arrow */}
-          <button
-            onClick={handlePrev}
-            aria-label="Previous testimonials"
-            className="hidden md:flex items-center justify-center
-                       w-11 h-11 rounded-full border border-gray-400
-                       text-gray-600 hover:bg-white hover:shadow-sm transition"
-          >
-            ←
-          </button>
-
-          {/* Cards */}
-          <div className="flex-1 grid grid-cols-1 md:grid-cols-3 gap-10">
-            {itemsToShow.map((item, idx) => (
-              <article
-                key={`${item.name}-${idx}`}
-                className="flex flex-col h-full"
-              >
-                {/* Quote */}
-                <div className="text-4xl text-gray-400 leading-none mb-4">”</div>
-
-                {/* Review Text */}
-                <p className="text-sm md:text-[13px] text-gray-700 leading-relaxed mb-6">
-                  {item.text}
-                </p>
-
-                {/* Person */}
-                <div className="mt-auto flex items-center gap-3">
-                  {/* Avatar Graphic */}
-                  <div
-                    className="w-12 h-12 flex items-center justify-center rounded-full 
-                               bg-gradient-to-br from-blue-100 via-blue-200 to-blue-300
-                               text-blue-900 text-2xl font-bold shadow-sm"
-                  >
-                    {item.icon || item.name.charAt(0)}
-                  </div>
-
-                  <div>
-                    <div className="text-sm font-semibold text-gray-800">
-                      {item.name}
-                    </div>
-                    <div className="text-xs text-gray-500">{item.role}</div>
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
-
-          {/* Right Arrow */}
-          <button
-            onClick={handleNext}
-            aria-label="Next testimonials"
-            className="hidden md:flex items-center justify-center
-                       w-11 h-11 rounded-full border border-gray-400
-                       text-gray-600 hover:bg-white hover:shadow-sm transition"
-          >
-            →
-          </button>
+        <div className="text-center mb-10 sm:mb-14">
+          <p className="text-[11px] sm:text-xs font-semibold tracking-[0.22em] uppercase text-[#8a9ac4]">
+            REVIEWS
+          </p>
+          <h2 className="mt-2 text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#152347]">
+            What professionals say about us
+          </h2>
+          <p className="mt-3 text-sm sm:text-base text-[#5f6e90] max-w-2xl mx-auto">
+            Feedback from consultants, managers, and leaders who have worked
+            with SMA IT Consulting Group.
+          </p>
         </div>
 
-        {/* Pagination Dots */}
-        <div className="mt-6 flex justify-center gap-2">
-          {Array.from({ length: totalPages }).map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setStartIndex(index * ITEMS_PER_PAGE)}
-              className={`h-2.5 w-2.5 rounded-full transition
-               ${
-                 index === currentPage
-                   ? "bg-gray-800"
-                   : "bg-gray-400 hover:bg-gray-500"
-               }`}
-            />
+        {/* Cards grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          {reviews.map((review) => (
+            <article
+              key={review.name}
+              className="relative bg-white rounded-2xl sm:rounded-3xl border border-[#e3e9f7] shadow-[0_14px_40px_rgba(20,46,100,0.06)] px-6 py-6 sm:px-7 sm:py-7 flex flex-col justify-between"
+            >
+              {/* Quote icon */}
+              <div className="text-[#4765d0] text-3xl sm:text-4xl leading-none mb-3">
+                &ldquo;
+              </div>
+
+              {/* Quote text */}
+              <p className="text-[13px] sm:text-[14px] leading-relaxed text-[#273553] mb-6">
+                {review.quote}
+              </p>
+
+              {/* Footer: avatar + name/role */}
+              <div className="flex items-center gap-3 mt-auto">
+                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-gradient-to-br from-[#4ab0ff] to-[#ffb74d] flex items-center justify-center text-xs sm:text-sm font-semibold text-[#152347]">
+                  {getInitials(review.name)}
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-[#152347]">
+                    {review.name}
+                  </p>
+                  <p className="text-[11px] sm:text-[12px] text-[#7b89b0]">
+                    {review.role}
+                  </p>
+                </div>
+              </div>
+            </article>
           ))}
         </div>
       </div>

@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 
 const ctaServices = [
   "Strategy",
-  "Process Management",
+  "Application Development",
   "Program & Project Management",
   "Data & Analytics",
   "Technology",
@@ -111,7 +111,9 @@ export default function CallToActionSection() {
           {/* social icons */}
           <div className="flex items-center gap-3">
             <a
-              href="#"
+              href="https://www.linkedin.com/in/sma-it-consulting-group-0374a53a8/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-9 h-9 rounded-full border border-blue-300/70 flex items-center justify-center text-xs font-semibold hover:bg-white/10"
             >
               in

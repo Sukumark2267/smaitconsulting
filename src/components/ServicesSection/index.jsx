@@ -10,9 +10,9 @@ const services = [
     icon: "📈",
   },
   {
-    title: "Process Management",
+    title: "Application Development",
     description:
-      "We support the full process lifecycle, helping your organization achieve greater operating efficiencies and improve margins.",
+      "Our team designs and delivers enterprise applications that streamline operations and support business growth.",
     icon: "🔄",
   },
   {
