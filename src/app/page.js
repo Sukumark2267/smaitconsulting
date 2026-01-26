@@ -13,6 +13,7 @@ import Footer from '@/components/footer';
 import Navbar from '@/components/navbar';
 import SecondHeroSection from '@/components/SecondHeroSection';
 import FourthHeroSection from '@/components/FourthHeroSection';
+import CaseStudiesSection from '@/components/CaseStudiesSection';
 
 
 export default function Home() {
@@ -46,6 +47,7 @@ export default function Home() {
       <Services/>
       <FourthHeroSection/>
       <ServicesSection/>
+      <CaseStudiesSection/>
       <ReviewsSection/>
       <Footer />
 
