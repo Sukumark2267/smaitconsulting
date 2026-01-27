@@ -137,7 +137,7 @@ const ContactSection = () => {
     >
       <div className="map-container">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2886.6012634864283!2d-79.7612346845022!3d43.73154897912171!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b34cbec4f4d7b%3A0x6d9275f6e8d5b6e2!2s860%20N%20Park%20Dr%2C%20Brampton%2C%20ON%20L6S%204N5%2C%20Canada!5e0!3m2!1sen!2sin!4v1700344567890!5m2!1sen!2sin"
+          src="https:google.com/maps/place/30+Eglinton+Ave+W+Suite+%23400,+Mississauga,+ON+L4Z+3X3/data=!4m2!3m1!1s0x882b40cafeaaaaab:0x22c17b833e31e069?sa=X&ved=1t:242&ictx=111"
           width="100%"
           height="450"
           allowFullScreen

@@ -62,12 +62,12 @@ export default function ReviewsSection() {
             REVIEWS
           </p>
           <h2 className="mt-2 text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#152347]">
-            What professionals say about us
+            Accelerate Your Career with Our Talent Acceleration Program
           </h2>
-          <p className="mt-3 text-sm sm:text-base text-[#5f6e90] max-w-2xl mx-auto">
+          {/* <p className="mt-3 text-sm sm:text-base text-[#5f6e90] max-w-2xl mx-auto">
             Feedback from consultants, managers, and leaders who have worked
             with SMA IT Consulting Group.
-          </p>
+          </p> */}
         </div>
 
         {/* Cards grid */}

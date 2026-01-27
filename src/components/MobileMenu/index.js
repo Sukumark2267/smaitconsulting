@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const mobileServices = [
   "Strategy",
-  "Process Management",
+  "Application Development",
   "Program & Project Management",
   "Data & Analytics",
   "Technology",

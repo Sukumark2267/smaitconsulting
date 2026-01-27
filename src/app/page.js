@@ -47,7 +47,7 @@ export default function Home() {
       <Services/>
       <FourthHeroSection/>
       <ServicesSection/>
-      <CaseStudiesSection/>
+      {/* <CaseStudiesSection/> */}
       <ReviewsSection/>
       <Footer />
 

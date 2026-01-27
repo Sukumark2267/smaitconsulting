@@ -6,6 +6,11 @@ import Image from "next/image";
 import { Menu } from "lucide-react";
 import MobileMenu from "../MobileMenu";
 
+// ✅ OPEN /case-studies IN NEW TAB
+const openCaseStudy = () => {
+  window.open("/case-studies", "_blank", "noopener,noreferrer");
+};
+
 // SERVICES DATA
 const servicesMegaItems = [
   {
@@ -85,17 +90,6 @@ const insightsLeftItems = [
   "Company News",
 ];
 
-const insightsTopics = [
-  "Overview",
-  "Public Sector",
-  "Data & Analytics",
-  "Strategy",
-  "Change Management",
-  "Financial Services",
-  "Healthcare",
-  "Learning & Development",
-  "Process",
-];
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -143,7 +137,7 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed w-full z-50 transition-all duration-300 relative ${
+      className={`nav-font fixed w-full z-50 transition-all duration-300 relative ${
         scrolled ? "bg-[#062a57] shadow-lg" : "bg-[#062a57]/90"
       }`}
     >
@@ -163,10 +157,10 @@ export default function Navbar() {
               className="
                 hidden sm:inline-block
                 ml-3
-                text-white          /* <- changed to white */
-                font-medium
-                text-[10px] sm:text-[12px] lg:text-[14px]
-                tracking-[0.22em]
+                text-white
+                font-semibold
+                text-[11px] sm:text-[13px] lg:text-[14px]
+                tracking-[0.08em]   /* 🔹 reduced letter-spacing */
                 uppercase
                 whitespace-nowrap
               "
@@ -177,7 +171,17 @@ export default function Navbar() {
         </div>
 
         {/* DESKTOP MENU */}
-        <nav className="hidden lg:flex items-center gap-5 xl:gap-7 ml-6 xl:ml-10 text-[13px] xl:text-sm font-medium tracking-wide text-white">
+        <nav
+          className="
+            hidden lg:flex items-center
+            gap-5 xl:gap-7 ml-6 xl:ml-10
+            text-[11px] xl:text-[13px]
+            font-semibold
+            uppercase
+            tracking-[0.06em]     /* 🔹 much tighter, more 'website' feeling */
+            text-white
+          "
+        >
           {/* SERVICES MEGA MENU */}
           <div
             className="relative"
@@ -198,7 +202,7 @@ export default function Navbar() {
                   <div className="grid grid-cols-1 md:grid-cols-3">
                     {/* LEFT: list */}
                     <div className="md:col-span-1 bg-[#f6f8fb] p-4 pt-6">
-                      <h3 className="text-xs font-semibold tracking-[0.16em] text-gray-500 uppercase mb-4">
+                      <h3 className="text-xs font-semibold tracking-[0.08em] text-gray-500 uppercase mb-4">
                         Services
                       </h3>
 
@@ -265,13 +269,14 @@ export default function Navbar() {
                         </span>
                       </p>
 
+                      {/* UPDATED: white button, blue text/border */}
                       <div className="mt-1 rounded-2xl bg-gradient-to-r from-[#0a63c9] via-[#084b9c] to-[#062a57] text-white px-5 py-4 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
                         <div className="text-xs md:text-sm font-medium">
                           Ready to take action and find your clarity?
                         </div>
                         <Link
                           href="/ContactUs"
-                          className="inline-flex items-center justify-between rounded-full border-2 border-[#ff9800] bg-[#ff9800] text-xs md:text-sm font-semibold px-4 py-2 text-[#0b2342] shadow-sm hover:bg-transparent hover:text-[#ff9800] transition"
+                          className="inline-flex items-center justify-between rounded-full border-2 border-[#062a57] text-xs md:text-sm font-semibold px-4 py-2 text-[#062a57] bg-white"
                         >
                           Let&apos;s Get to Work
                           <span className="ml-1 text-sm">➜</span>
@@ -367,60 +372,48 @@ export default function Navbar() {
                       </div>
 
                       <Link
-                        href="/Insights"
+                        href="/case-studies"
+                        target="_blank"
                         className="mt-5 inline-flex items-center justify-center rounded-full bg-[#062a57] text-white text-xs md:text-sm font-semibold px-5 py-2 hover:bg-[#041d3a] transition w-max"
                       >
                         All Insights
                       </Link>
                     </div>
 
-                    {/* RIGHT COLUMN */}
-                    <div className="border-l border-gray-200 pl-8">
-                      <h3 className="text-sm md:text-base font-semibold text-gray-800 mb-3">
-                        Insights
-                      </h3>
-
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-y-2 gap-x-8">
-                        {insightsTopics.map((topic) => (
-                          <button
-                            key={topic}
-                            type="button"
-                            className="flex items-center gap-2 text-xs md:text-sm text-gray-700 hover:text-[#0a63c9] transition text-left"
-                          >
-                            <span className="w-4 h-4 rounded-full border border-[#0a63c9] flex items-center justify-center text-[10px]">
-                              ◇
-                            </span>
-                            <span>{topic}</span>
-                          </button>
-                        ))}
-                      </div>
-                    </div>
+                    {/* RIGHT COLUMN (currently not used) */}
                   </div>
                 </div>
               </div>
             )}
           </div>
 
-          {/* SIMPLE LINKS */}
-          <Link href="/AboutUs" className="hover:text-gray-200 transition">
+          {/* SIMPLE LINKS – no extra tracking here */}
+          <Link
+            href="/AboutUs"
+            className="hover:text-gray-200 transition"
+          >
             ABOUT
           </Link>
-          <Link href="/" className="hover:text-gray-200 transition">
+          <Link
+            href="/"
+            className="hover:text-gray-200 transition"
+          >
             CAREERS
           </Link>
         </nav>
 
-        {/* CTA (RIGHT) */}
+        {/* CTA (RIGHT) – UPDATED COLORS */}
         <div className="hidden lg:flex shrink-0">
           <button
             className="
               group flex items-center gap-2 
-              rounded-full border-2 border-[#ff9800]
-              bg-[#ff9800] text-[13px] font-semibold
+              rounded-full border-2 border-[#062a57]
+              bg-white text-[13px] font-semibold
               px-4 py-2
               shadow-md
+              text-[#062a57]
               transition-all
-              hover:bg-transparent hover:text-[#ff9800]
+              hover:bg-[#062a57] hover:text-white
               hover:shadow-lg
             "
           >
