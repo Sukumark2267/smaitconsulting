@@ -69,7 +69,7 @@ const ContactSection = () => {
 
     return (
     <>
-      <div className="flex justify-center">
+      {/* <div className="flex justify-center">
       <motion.div
         ref={ref}
         initial={{ width: '0%' }}
@@ -81,7 +81,7 @@ const ContactSection = () => {
       >
       
       </motion.div>
-    </div>
+    </div> */}
 
     <section id="contact">
     <h2 className="text-6xl md:text-7xl lg:text-8xl mb-8 text-white uppercase text-center">

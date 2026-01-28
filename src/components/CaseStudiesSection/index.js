@@ -6,14 +6,14 @@ export default function CaseStudiesSection() {
   return (
     <section
       id="case-studies"
-      className="bg-[#020c1f] text-white py-16 px-6 lg:px-16"
+      className="nav-font bg-[#020c1f] text-white py-16 px-6 lg:px-16"
     >
       {/* SECTION HEADER */}
       <div className="max-w-5xl mx-auto mb-10">
-        <p className="text-[11px] tracking-[0.24em] uppercase text-[#7fb3ff] mb-2">
+        <p className="text-[11px] tracking-[0.1em] uppercase text-[#7fb3ff] mb-2">
           Case Study
         </p>
-        <h2 className="text-2xl md:text-3xl font-semibold leading-snug">
+        <h2 className="text-2xl md:text-3xl   leading-snug">
           Bell Platform Engineering &amp; Infrastructure Modernization
         </h2>
         <p className="mt-4 text-sm md:text-base text-[#c5d3ea] max-w-3xl">
@@ -34,11 +34,11 @@ export default function CaseStudiesSection() {
           <div className="relative flex flex-col md:flex-row gap-6 md:gap-10 items-start">
             {/* LEFT TEXT BLOCK */}
             <div className="flex-1 space-y-3">
-              <div className="inline-flex items-center gap-2 rounded-full bg-black/30 border border-white/10 px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-[#d5e3ff]">
+              <div className="inline-flex items-center gap-2 rounded-full bg-black/30 border border-white/10 px-3 py-1 text-[11px] uppercase tracking-[0.1em] text-[#d5e3ff]">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#4ab0ff]" />
                 Bell Canada – Platform Engineering
               </div>
-              <h3 className="text-lg md:text-xl font-semibold">
+              <h3 className="text-lg md:text-xl  ">
                 Modernizing CI/CD, observability, and infrastructure reliability
                 for mission-critical platforms.
               </h3>
@@ -54,27 +54,27 @@ export default function CaseStudiesSection() {
             <div className="w-full md:w-60 lg:w-72 shrink-0">
               <div className="grid grid-cols-2 gap-3">
                 <div className="rounded-2xl bg-black/30 border border-white/10 px-4 py-3">
-                  <p className="text-[11px] uppercase tracking-[0.16em] text-[#9fb6ff] mb-1">
+                  <p className="text-[11px] uppercase tracking-[0.1em] text-[#9fb6ff] mb-1">
                     Deployments
                   </p>
-                  <p className="text-lg font-semibold">Zero-downtime</p>
+                  <p className="text-lg  ">Zero-downtime</p>
                   <p className="text-[11px] text-[#c5d3ea]/90 mt-1">
                     Service continuity preserved across releases
                   </p>
                 </div>
 
                 <div className="rounded-2xl bg-black/30 border border-white/10 px-4 py-3">
-                  <p className="text-[11px] uppercase tracking-[0.16em] text-[#9fb6ff] mb-1">
+                  <p className="text-[11px] uppercase tracking-[0.1em] text-[#9fb6ff] mb-1">
                     Reliability
                   </p>
-                  <p className="text-lg font-semibold">Higher stability</p>
+                  <p className="text-lg  ">Higher stability</p>
                   <p className="text-[11px] text-[#c5d3ea]/90 mt-1">
                     Resilient CI/CD and platform operations
                   </p>
                 </div>
 
                 <div className="rounded-2xl bg-black/30 border border-white/10 px-4 py-3 col-span-2">
-                  <p className="text-[11px] uppercase tracking-[0.16em] text-[#9fb6ff] mb-1">
+                  <p className="text-[11px] uppercase tracking-[0.1em] text-[#9fb6ff] mb-1">
                     Focus Areas
                   </p>
                   <p className="text-[12px] text-[#d5e3ff] leading-relaxed">
@@ -94,7 +94,7 @@ export default function CaseStudiesSection() {
         {/* Client + Engagement */}
         <div className="grid md:grid-cols-[minmax(0,1.1fr)_minmax(0,1.1fr)] gap-8 border-t border-[#243456] pt-8">
           <div>
-            <h4 className="text-xs font-semibold tracking-[0.18em] uppercase text-[#7fb3ff] mb-2">
+            <h4 className="text-xs   tracking-[0.1em] uppercase text-[#7fb3ff] mb-2">
               Client
             </h4>
             <p>
@@ -104,11 +104,11 @@ export default function CaseStudiesSection() {
             </p>
           </div>
           <div>
-            <h4 className="text-xs font-semibold tracking-[0.18em] uppercase text-[#7fb3ff] mb-2">
+            <h4 className="text-xs   tracking-[0.1em] uppercase text-[#7fb3ff] mb-2">
               Engagement
             </h4>
             <p>
-              <span className="font-semibold">
+              <span className=" ">
                 Platform Engineering &amp; Infrastructure Modernization
               </span>
               . SMA IT Consulting Group partnered with Bell to modernize its
@@ -121,14 +121,14 @@ export default function CaseStudiesSection() {
 
         {/* Executive Overview */}
         <div className="border-t border-[#243456] pt-8">
-          <h4 className="text-xs font-semibold tracking-[0.18em] uppercase text-[#7fb3ff] mb-3">
+          <h4 className="text-xs   tracking-[0.1em] uppercase text-[#7fb3ff] mb-3">
             Executive Overview
           </h4>
           <p className="mb-3">
             Bell initiated a strategic modernization program to evolve its CI/CD
             pipelines and infrastructure in response to growing scale, data
             volumes, and operational complexity. The mandate was clear:{" "}
-            <span className="font-semibold">
+            <span className=" ">
               enable zero-downtime deployments, maintain absolute data
               integrity, and create a scalable foundation
             </span>{" "}
@@ -143,7 +143,7 @@ export default function CaseStudiesSection() {
 
         {/* Business Challenge */}
         <div className="border-t border-[#243456] pt-8">
-          <h4 className="text-xs font-semibold tracking-[0.18em] uppercase text-[#7fb3ff] mb-3">
+          <h4 className="text-xs   tracking-[0.1em] uppercase text-[#7fb3ff] mb-3">
             Business Challenge
           </h4>
           <p className="mb-3">
@@ -176,7 +176,7 @@ export default function CaseStudiesSection() {
 
         {/* Solution */}
         <div className="border-t border-[#243456] pt-8">
-          <h4 className="text-xs font-semibold tracking-[0.18em] uppercase text-[#7fb3ff] mb-3">
+          <h4 className="text-xs   tracking-[0.1em] uppercase text-[#7fb3ff] mb-3">
             SMA IT Consulting Group Solution
           </h4>
           <p className="mb-3">
@@ -213,7 +213,7 @@ export default function CaseStudiesSection() {
 
         {/* Technologies & Delivery Approach */}
         <div className="border-t border-[#243456] pt-8">
-          <h4 className="text-xs font-semibold tracking-[0.18em] uppercase text-[#7fb3ff] mb-3">
+          <h4 className="text-xs   tracking-[0.1em] uppercase text-[#7fb3ff] mb-3">
             Technologies &amp; Delivery Approach
           </h4>
           <ul className="list-disc list-inside space-y-1">
@@ -231,38 +231,38 @@ export default function CaseStudiesSection() {
 
         {/* Business Outcomes */}
         <div className="border-t border-[#243456] pt-8">
-          <h4 className="text-xs font-semibold tracking-[0.18em] uppercase text-[#7fb3ff] mb-3">
+          <h4 className="text-xs   tracking-[0.1em] uppercase text-[#7fb3ff] mb-3">
             Business Outcomes
           </h4>
           <div className="grid md:grid-cols-2 gap-4">
             <ul className="list-disc list-inside space-y-1">
               <li>
-                <span className="font-semibold">Zero-Downtime Deployments –</span>{" "}
+                <span className=" ">Zero-Downtime Deployments –</span>{" "}
                 Seamless releases with no service disruption
               </li>
               <li>
-                <span className="font-semibold">Improved Platform Reliability –</span>{" "}
+                <span className=" ">Improved Platform Reliability –</span>{" "}
                 Increased system stability and resilience
               </li>
               <li>
-                <span className="font-semibold">Enhanced Observability –</span>{" "}
+                <span className=" ">Enhanced Observability –</span>{" "}
                 Faster detection, diagnosis, and resolution of issues
               </li>
             </ul>
             <ul className="list-disc list-inside space-y-1">
               <li>
-                <span className="font-semibold">Scalable Architecture –</span>{" "}
+                <span className=" ">Scalable Architecture –</span>{" "}
                 Infrastructure designed to support future growth and new
                 capabilities
               </li>
               <li>
-                <span className="font-semibold">Preserved Data Integrity –</span>{" "}
+                <span className=" ">Preserved Data Integrity –</span>{" "}
                 Eliminated data-loss risks during deployments
               </li>
               <li>
-                <span className="font-semibold">
-                  Modular, Maintainable Infrastructure –
-                </span>{" "}
+                <span className=" ">
+                  Modular, Maintainable Infrastructure –{" "}
+                </span>
                 Reduced complexity and long-term operational effort
               </li>
             </ul>
@@ -271,7 +271,7 @@ export default function CaseStudiesSection() {
 
         {/* Engagement Model */}
         <div className="border-t border-[#243456] pt-8">
-          <h4 className="text-xs font-semibold tracking-[0.18em] uppercase text-[#7fb3ff] mb-3">
+          <h4 className="text-xs   tracking-[0.1em] uppercase text-[#7fb3ff] mb-3">
             Engagement Model
           </h4>
           <p>
@@ -285,7 +285,7 @@ export default function CaseStudiesSection() {
 
         {/* Key Learnings */}
         <div className="border-t border-[#243456] pt-8">
-          <h4 className="text-xs font-semibold tracking-[0.18em] uppercase text-[#7fb3ff] mb-3">
+          <h4 className="text-xs   tracking-[0.1em] uppercase text-[#7fb3ff] mb-3">
             Key Learnings
           </h4>
           <ul className="list-disc list-inside space-y-1">
@@ -315,7 +315,7 @@ export default function CaseStudiesSection() {
 
         {/* Conclusion */}
         <div className="border-t border-[#243456] pt-8">
-          <h4 className="text-xs font-semibold tracking-[0.18em] uppercase text-[#7fb3ff] mb-3">
+          <h4 className="text-xs   tracking-[0.1em] uppercase text-[#7fb3ff] mb-3">
             Conclusion
           </h4>
           <p>

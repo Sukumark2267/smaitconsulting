@@ -51,26 +51,56 @@ function getInitials(name) {
 
 export default function ReviewsSection() {
   return (
-    <section
-      id="reviews"
-      className="w-full py-16 sm:py-20 bg-[#f5f7fb]"
-    >
+    <section id="reviews" className="w-full py-16 sm:py-20 bg-[#f5f7fb]">
       <div className="max-w-6xl mx-auto px-6 lg:px-10">
-        {/* Heading */}
+        {/* TOP INTRO: How We Can Help */}
+        <div className="text-center mb-6 sm:mb-8">
+          <p className="text-[11px] sm:text-xs font-semibold tracking-[0.2em] uppercase text-[#4765d0]">
+            Bring Your Vision to Life
+          </p>
+          <h2 className="mt-2 text-2xl sm:text-3xl font-semibold text-[#152347]">
+            How We Can Help
+          </h2>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-10 mb-12 sm:mb-16 text-left">
+          <div>
+            <h3 className="text-base sm:text-lg font-semibold text-[#152347] mb-2">
+              Experienced Consultants
+            </h3>
+            <p className="text-[13px] sm:text-[14px] leading-relaxed text-[#273553]">
+              We bring more than technical expertise; we partner with banks and
+              financial organizations to navigate ongoing technological
+              evolution. Our proven delivery history reflects our ability to
+              drive successful outcomes in complex environments.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-base sm:text-lg font-semibold text-[#152347] mb-2">
+              Technology Advisory
+            </h3>
+            <p className="text-[13px] sm:text-[14px] leading-relaxed text-[#273553]">
+              Our Technology Advisory Services deliver seamless, end-to-end
+              guidance across technology implementation, custom software
+              development, cloud transformation, cybersecurity, and tailored IT
+              solutions. We ensure comprehensive support for today’s complex
+              technology landscape.
+            </p>
+          </div>
+        </div>
+
+        {/* REVIEWS HEADING */}
         <div className="text-center mb-10 sm:mb-14">
           <p className="text-[11px] sm:text-xs font-semibold tracking-[0.22em] uppercase text-[#8a9ac4]">
-            REVIEWS
+            Reviews
           </p>
           <h2 className="mt-2 text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#152347]">
             Accelerate Your Career with Our Talent Acceleration Program
           </h2>
-          {/* <p className="mt-3 text-sm sm:text-base text-[#5f6e90] max-w-2xl mx-auto">
-            Feedback from consultants, managers, and leaders who have worked
-            with SMA IT Consulting Group.
-          </p> */}
         </div>
 
-        {/* Cards grid */}
+        {/* CARDS GRID */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {reviews.map((review) => (
             <article
