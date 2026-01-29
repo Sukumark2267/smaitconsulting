@@ -109,8 +109,8 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const toggleMenu = () => setMenuOpen(!menuOpen);
-  const closeMenu = () => setMenuOpen(false);
+ const toggleMenu = () => setMenuOpen((prev) => !prev);
+const closeMenu = () => setMenuOpen(false);
 
   const activeService =
     servicesMegaItems.find((s) => s.id === activeServiceId) ||
