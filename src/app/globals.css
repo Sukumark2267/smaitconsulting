@@ -149,8 +149,7 @@ body {
   background-color: var(--secondary);
   color: var(--light-text);
   line-height: 1.6;
-  overflow-x: hidden !important;
-  overflow-y: auto !important;
+ 
 }
 
 /* header {
@@ -1360,4 +1359,6 @@ footer {
 }
 html, body {
   overflow-x: hidden !important;
+    overflow-y: auto;  /* ✅ page scroll lives here */
+
 }
