@@ -4,40 +4,40 @@ import React from "react";
 
 const reviews = [
   {
-    name: "Ananya",
+    name: "Ananya C",
     role: "Senior IT Consultant",
     quote:
-      "The team at SMA IT Consulting Group is exceptional. They guided me every step of the way to secure a fantastic position.",
+      "The team at SMA is exceptional. They guided me every step of the way to secure a fantastic position.",
   },
   {
-    name: "Daniel",
+    name: "Daniel C",
     role: "Program Manager",
     quote:
-      "SMA IT Consulting Group was instrumental in landing my next role. Their industry connections are unmatched.",
+      "SMA IT Consulting Group was instrumental in landing my next role. Their industry connections are unmatched. Incredible management consulting firm with the best talent in the industry!",
   },
   {
-    name: "Ozgur",
+    name: "John B",
     role: "Lending Operations Specialist",
     quote:
-      "SMA IT Consulting Group is the go-to consulting firm. Their expertise and connections in the industry are unparalleled.",
+      "I've had the pleasure of working with SMA IT Consulting for many years, first as a client and now as their consultant. Their team is knowledgeable, responsive, and truly committed to delivering top-quality IT solutions. It's been amazing to see their consistent growth and dedication to innovation. A reliable, forward-thinking company that's always a step ahead. They've been a trusted TECH partner. Highly recommend!",
   },
   {
-    name: "Sonia",
+    name: "Sony S",
     role: "Project Manager",
     quote:
-      "SMA IT Consulting Group exceeded my expectations. Their dedication and network within the industry are remarkable.",
+      "As a consultant placed through SMA IT, I had an excellent experience throughout the entire process. They went above and beyond to identify the right opportunity and provided clear guidance at every stage.",
   },
   {
-    name: "Wasim",
+    name: "Wasim K",
     role: "Business Analyst",
     quote:
-      "I highly recommend SMA IT Consulting Group. Their commitment and connections in the industry are incredible.",
+      "I highly recommend SMA IT. Their commitment and connections in the industry are incredible. Their professionalism, reliability, and genuine commitment to acting in the best interests of both the consultant and the client truly set them apart.",
   },
   {
-    name: "Roy",
-    role: "Vice President, Technology",
+    name: "Roy S",
+    role: "Sr Developer, Technology",
     quote:
-      "SMA IT Consulting Group played a crucial role in strengthening our delivery outcomes and client relationships.",
+      "SMA IT team was consistently responsive, knowledgeable, and proactive in offering advice and solutions when questions or time-sensitive issues arose.",
   },
 ];
 
