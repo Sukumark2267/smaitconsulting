@@ -30,13 +30,7 @@ export default function ContactUs() {
     <main className='overflow-x-hidden'>
          <Navbar />
          <section className="ContactUs">
-         <div className="Contactssection1 items-center flex justify-center">
-         <div className="h-[5rem] sm:h-[6rem] md:h-[9rem] lg:h-[12rem] xl:h-[15rem] 2xl:h-[22rem] w-full">
-         <TextHoverEffect className="about-us-text font-bold" text="CONTACT US" />
-
-         {/* <TextHoverEffect h1>ABOUT US</h1> */}
-         </div>
-         </div>
+       
          <ContactSection />
          <Footer />
          </section>

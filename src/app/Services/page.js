@@ -4,7 +4,7 @@ import './Services.css';
 import { useState, useEffect, useLayoutEffect } from 'react';
 import Navbar from '@/components/navbar';
 import Footer from '@/components/footer'; 
-import ServiceChart from '@/components/ThirdHeroSection';
+import ServiceChart from '@/components/Services';
 import Preloader from '@/components/Preloader';
 import dynamic from 'next/dynamic';
 
@@ -28,7 +28,7 @@ export default function Services() {
   return (
     <>
          <Navbar />
-         <section className="Services overflow-x-clip">
+         <section className="Services  overflow-y-auto overflow-x-clip">
          <ServiceChart />
          <Footer />
           </section>

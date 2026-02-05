@@ -43,10 +43,10 @@ const servicesMegaItems = [
   },
   {
     id: "tech",
-    label: "Technology",
+    label: "Dynamics 365 CRM",
     icon: "💻",
     blurb:
-      "Technology services that bridge the gap between business and IT, ensuring resilient and scalable solutions.",
+      "Dynamics 365 CRM services that bridge the gap between business and IT, ensuring resilient and scalable solutions.",
   },
   {
     id: "cyber",
@@ -206,7 +206,7 @@ const closeMenu = () => setMenuOpen(false);
                         Services
                       </h3>
 
-                      <ul className="space-y-1.5">
+                      <ul className="nav-font space-y-1.5">
                         {servicesMegaItems.map((item) => {
                           const isActive = item.id === activeServiceId;
                           return (

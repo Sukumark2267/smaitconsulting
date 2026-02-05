@@ -10,13 +10,6 @@
     overflow-x: hidden !important;
   }
   
-  .Contactssection1 {
-    background-color: none;
-    width: 100vw;
-    height: 50vh;
-    position: relative;
-  }
-  
   .Contactsection1 text {
     font-family: 'Swiss721Bold';
     font-weight: bold;

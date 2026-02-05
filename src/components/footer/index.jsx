@@ -68,9 +68,6 @@ export default function CallToActionSection() {
 
           {/* Right headline + button */}
           <div className="flex-1 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight">
-              Let&apos;s get to work!
-            </h2>
 
             <Link
               href="/ContactUs"
@@ -85,7 +82,7 @@ export default function CallToActionSection() {
                 hover:shadow-lg
               "
             >
-              Start right now
+            Let’s Get To Work
               <span className="translate-y-[1px]">➜</span>
             </Link>
           </div>

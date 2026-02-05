@@ -4,10 +4,8 @@ import React from "react";
 
 export default function CaseStudiesSection() {
   return (
-    <section
-      id="case-studies"
-      className="nav-font bg-[#020c1f] text-white py-16 px-6 lg:px-16"
-    >
+   <section id="case-studies" className="bg-[#020c1f] text-white py-16 px-6 lg:px-16 font-[Poppins]">
+
       {/* SECTION HEADER */}
       <div className="max-w-5xl mx-auto mb-10">
         <p className="text-[11px] tracking-[0.1em] uppercase text-[#7fb3ff] mb-2">

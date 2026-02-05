@@ -153,7 +153,7 @@ export default function Navbar() {
         <div className="flex items-center min-w-0">
           <Link href="/" className="flex items-center min-w-0">
             <Image
-              src="/images/smaitlogo.png"
+              src="/images/smitHeader.png"
               alt="SMA IT Consulting Group"
               width={280}
               height={90}

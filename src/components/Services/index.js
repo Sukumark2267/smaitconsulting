@@ -1,12 +1,60 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
+import React, { useEffect, useRef, useState } from "react";
+import "./services.css"; // keep this if you’re using it for extra styling
 
-export default function CaseStudySection4() {
+const serviceItems = [
+  {
+    title: "Strategy and Planning",
+    body: `Technology that doesn’t align with your organization’s goals and with
+how your teams work inhibits progress and leaves you open to risk.
+Find your just-right solution—and a prioritized roadmap for achieving
+it—with a team that delves deeply into your organization to support
+your strategy.`,
+  },
+  {
+    title: "Data Analytics",
+    body: `In complex environments like commercial lending and capital markets,
+data without direction creates noise, not value. We transform
+fragmented, high-volume data into trusted insights that power better
+decisions, strengthen risk management, improve regulatory confidence,
+and drive sustainable growth.`,
+  },
+  {
+    title: "IT Managed Services",
+    body: `Avoid expensive shutdowns, maintenance problems, security breaches,
+and daily headaches with proactive attention from a team devoted to
+big-picture thinking. It’s more than just answers to day-to-day
+technology concerns. It’s a proactive management strategy from experts
+who’ve been there.`,
+  },
+  {
+    title: "Multisource Service Integration",
+    body: `Managing multiple suppliers uniformly and getting them to work together
+effectively is a daunting task when you’re also running an
+organization. We seek the best partners in each specialty and provide
+a single point of contact of control back to you.`,
+  },
+  {
+    title: "Cybersecurity and Disaster Recovery",
+    body: `Security threats constantly grow and evolve—and cost organizations
+dearly, in terms of financial and reputational damage. Comprehensive
+cyber-threat mitigation strategies keep breaches from derailing your
+progress and ensure regulatory compliance.`,
+  },
+  {
+    title: "Cloud Solutions",
+    body: `When your impact is throttled by legacy systems and outdated processes,
+our technical experts can help you leverage the cloud with creative
+solutions that empower your people.`,
+  },
+];
+
+export default function Services() {
   const ref = useRef(null);
   const [visible, setVisible] = useState(false);
 
+  // simple reveal-on-scroll (can remove if you don’t want any animation)
   useEffect(() => {
     if (!ref.current) return;
 
@@ -27,88 +75,66 @@ export default function CaseStudySection4() {
   }, []);
 
   return (
-    <section
-      ref={ref}
-      className={`relative bg-white py-12 md:py-16 ${
-        visible ? "section-reveal visible" : "section-reveal"
-      }`}
-    >
-      {/* FULL-WIDTH ROW, NO max-w / NO horizontal padding */}
-      <div className="flex flex-col lg:flex-row items-stretch gap-6 md:gap-10 w-full">
-        {/* LEFT CONTENT */}
-        <div className="flex-[0.9] flex flex-col justify-center pl-6 lg:pl-16">
-          {/* Heading box */}
-          <div className="border border-black px-6 py-6 md:px-8 md:py-8 max-w-xl">
-            <h2 className="text-lg md:text-xl lg:text-2xl font-semibold leading-snug text-[#1a1a1a]">
-              E2E Finance Transformation:
-              <br className="hidden md:block" />
-              <span className="font-normal">
-                {" "}
-                Enhancing Compliance and Efficiency for Long-Term Success
-              </span>
-            </h2>
-          </div>
+  <section
+    id="services"
+    ref={ref}
+    className={`bg-[#062a57] py-12 md:py-16 ${
+      visible ? "section-reveal visible" : "section-reveal"
+    }`}
+  >
+    <div className="max-w-6xl mx-auto px-6 lg:px-10 flex flex-col lg:flex-row gap-10 lg:gap-14">
 
-          {/* Tags */}
-          <div className="mt-5 flex flex-wrap items-center gap-4 text-sm md:text-[15px]">
-            <button className="inline-flex items-center gap-2 text-[#0066cc]">
-              <span>🏦</span>
-              <span>Financial Services</span>
-            </button>
+      {/* LEFT: heading + intro */}
+    <div className="lg:w-[40%] flex flex-col">
+  {/* Small label */}
+  <h1 className="text-xs tracking-[0.20em] uppercase text-[#bcd6ff] mb-4">
+    SERVICES
+  </h1>
 
-            <span className="h-4 w-px bg-gray-300 hidden sm:inline-block" />
+  {/* Main heading styled like your website titles */}
+  <h2 className="
+      text-white 
+      text-[28px] 
+      md:text-[34px] 
+      lg:text-[40px] 
+      font-semibold 
+      leading-[1.25] 
+      service-title-font
+    ">
+    Align your technology to your business goals and reach your desired
+    outcomes faster and more cost-effectively.
+  </h2>
+</div>
 
-            <button className="inline-flex items-center gap-2 text-[#0066cc]">
-              <span>📁</span>
-              <span>Program &amp; Project Management</span>
-            </button>
-          </div>
 
-          {/* Description */}
-          <p className="mt-4 max-w-xl text-sm md:text-base text-[#4b4b4b] leading-relaxed">
-            Finance transformation initiatives streamline operations, enhance
-            data accuracy, and optimize reporting, leading to increased
-            efficiency and strengthened strategic leadership.
-          </p>
 
-          {/* CTA */}
-          <button
-            className="mt-6 inline-flex items-center justify-center rounded-full 
-                       bg-[#062a57] text-white text-sm md:text-base font-semibold 
-                       px-6 py-3 shadow-md hover:bg-[#041d3a] transition-colors"
-          >
-            Read the case study
-          </button>
-        </div>
+      {/* RIGHT: service list */}
+      <div className="lg:w-[60%]">
+        <div className="divide-y divide-[#0b4079]">
+          {serviceItems.map((item) => (
+            <article key={item.title} className="py-5">
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <h3 className="text-[17px] md:text-[18px] font-semibold text-[#4ab0ff] mb-2">
+                    {item.title}
+                  </h3>
 
-        {/* CHEVRON (PINK) */}
-        <div className="hidden lg:flex items-center justify-center px-4">
-          <svg
-            viewBox="0 0 60 260"
-            className="h-64 w-auto drop-shadow-md"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <polygon
-              points="4,0 56,130 4,260 14,130"
-              fill="white"
-              stroke="#ff4f8b"
-              strokeWidth="4"
-            />
-          </svg>
-        </div>
+                  <p className="text-sm md:text-[15px] leading-relaxed text-[#e2ecff] whitespace-pre-line">
+                    {item.body}
+                  </p>
+                </div>
 
-        {/* RIGHT IMAGE PANEL – FULL BLEED IN ITS COLUMN */}
-        <div className="flex-[1.2]">
-          <div className="relative w-full h-[420px] md:h-[480px] lg:h-[520px] overflow-hidden">
-            <Image
-              src="/images/section4_image.png"   // <- make sure this file exists
-              alt="Finance transformation visual"
-              fill
-              className="object-cover"
-            />
-          </div>
+                {/* Arrow */}
+                <span className="hidden sm:inline-block mt-1 text-[#ffb74d] text-xl">
+                  ➜
+                </span>
+              </div>
+            </article>
+          ))}
         </div>
       </div>
-    </section>
-  );
+    </div>
+  </section>
+);
+
 }
