@@ -72,14 +72,16 @@ export default function CallToActionSection() {
             <Link
               href="/ContactUs"
               className="
-                inline-flex items-center gap-2
-                rounded-full border-2 border-[#ff9800]
-                bg-[#ff9800] text-[#0b2342]
-                px-7 py-3 text-sm md:text-base font-semibold
-                shadow-md
-                transition-all
-                hover:bg-transparent hover:text-[#ff9800]
-                hover:shadow-lg
+                 group flex items-center gap-2 
+              rounded-full border-2 border-[#062a57]
+              bg-white text-[13px] font-semibold
+              px-4 py-2
+              shadow-md
+              text-[#062a57]
+              transition-all
+              hover:bg-[#062a57] hover:text-white
+              hover:shadow-lg
+
               "
             >
             Let’s Get To Work

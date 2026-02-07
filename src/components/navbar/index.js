@@ -276,10 +276,28 @@ const closeMenu = () => setMenuOpen(false);
                         </div>
                         <Link
                           href="/ContactUs"
-                          className="inline-flex items-center justify-between rounded-full border-2 border-[#062a57] text-xs md:text-sm font-semibold px-4 py-2 text-[#062a57] bg-white"
                         >
-                          Let&apos;s Get to Work
-                          <span className="ml-1 text-sm">➜</span>
+                        <div className="hidden lg:flex shrink-0">
+          <button
+            className="
+              group flex items-center gap-2 
+              rounded-full border-2 border-[#062a57]
+              bg-white text-[13px] font-semibold
+              px-4 py-2
+              shadow-md
+              text-[#062a57]
+              transition-all
+              hover:bg-[#062a57] hover:text-white
+              hover:shadow-lg
+            "
+          >
+            <span>Let&apos;s get to work</span>
+            <span className="transition-transform group-hover:translate-x-1">
+              ➜
+            </span>
+          </button>
+        </div>
+
                         </Link>
                       </div>
                     </div>
