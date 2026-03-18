@@ -239,22 +239,22 @@ const ContactSection = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                @smaitconsultinggroup
               </a>
             </div>
           </div>
 
-          <div className="map-container">
-            <iframe
-              src="https:google.com/maps/place/30+Eglinton+Ave+W+Suite+%23400,+Mississauga,+ON+L4Z+3X3/data=!4m2!3m1!1s0x882b40cafeaaaaab:0x22c17b833e31e069?sa=X&ved=1t:242&ictx=111"
-              width="100%"
-              height="450"
-              allowFullScreen
-              loading="lazy"
-              style={{ border: 0 }}
-              referrerPolicy="no-referrer-when-downgrade"
-            ></iframe>
-          </div>
+         <div className="map-container">
+  <iframe
+    title="SMA IT Consulting Group Location"
+    src="https://www.google.com/maps?q=30%20Eglinton%20Ave%20W%20%23400%2C%20Mississauga%2C%20ON%20L5R%203E7&output=embed"
+    width="100%"
+    height="450"
+    allowFullScreen
+    loading="lazy"
+    style={{ border: 0 }}
+    referrerPolicy="no-referrer-when-downgrade"
+  />
+</div>
         </div>
       </div>
     </section>
